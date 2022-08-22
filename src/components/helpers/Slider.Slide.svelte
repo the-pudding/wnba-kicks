@@ -5,7 +5,7 @@
 
 	export let index;
 
-	$: width = $dir === "horizontal" ? `${$w}px` : "100%";
+	$: width = $dir === "horizontal" ? `${100}px` : "100%";
 	$: height = $dir === "vertical" ? `${$h}px` : "100%";
 	$: visible = index === $cur;
 	$: disable = !visible;
