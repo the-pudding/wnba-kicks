@@ -120,6 +120,7 @@ Usage:
 
 <style>
 	section {
+		background-color: #2906fc;
 		position: relative;
 		width: 100%;
 		height: 100%;
@@ -127,6 +128,7 @@ Usage:
 		padding: 0;
 		z-index: 1;
 		overflow: hidden;
+		padding: 0.5rem 0;
 	}
 
 	.slides {
