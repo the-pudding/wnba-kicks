@@ -10,8 +10,6 @@
 	let body;
 	let infoVisible = false;
 
-	console.log(copy);
-
 	onMount(() => {
 		body = select("body")
 		infoOverlay = select(".infoOverlay")
