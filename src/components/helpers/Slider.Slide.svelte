@@ -9,6 +9,21 @@
 	$: height = $dir === "vertical" ? `${$h}px` : "100%";
 	$: visible = index === $cur;
 	$: disable = !visible;
+
+
+	let moving;
+	let left = 100;
+	function onMouseDown() { moving = true;
+	console.log("check") }
+
+	function onMouseMove(e) {
+		if (moving) {
+			left += e.movementX;
+		}
+	}
+
+	function onMouseUp() {	moving = false;
+		console.log("check") }
 </script>
 
 <div
@@ -20,9 +35,12 @@
 	aria-label="slide {index + 1} of {$count}"
 	aria-current={visible}
 	use:canTab={{ disable }}
+	on:mousedown={onMouseDown}
 >
 	<slot />
 </div>
+
+<svelte:window on:mouseup={onMouseUp} on:mousemove={onMouseMove} />
 
 <style>
 	.slide {

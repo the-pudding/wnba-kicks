@@ -10,17 +10,32 @@
 	// import Footer from "$components/Footer.svelte";
 
 	const copy = getContext("copy");
-
-	let sliderEl; // component binding
+	let copyShift = copy.shoes.slice(1);
+	console.log(copyShift);
+	let sliderEl;
+	let moving;
+	let left = 100;
 
 	onMount(() => {
 		sliderEl.next(); // navigation call
     });
+
+	function onMouseDown() { moving = true;
+	console.log("check") }
+
+	function onMouseMove(e) {
+		if (moving) {
+			left += e.movementX;
+		}
+	}
+
+	function onMouseUp() {	moving = false;
+		console.log("check") }
 </script>
 
 <Header />
-<Slider bind:this={sliderEl}>
-	{#each copy.shoes as shoe}
+<Slider bind:this={sliderEl} class="draggable">
+	{#each copyShift as shoe}
 	<Slide>
 		<div class="navWrapper">
 			<img src="assets/images/thumbnails/shoe{shoe.shoeID}_thumbnail.png"
@@ -38,6 +53,11 @@
 <!-- <Footer /> -->
 
 <style>
+	.draggable {
+		user-select: none;
+		cursor: move;
+	}
+
 	.navWrapper {
 		max-width: 100px;
 		display: flex;
