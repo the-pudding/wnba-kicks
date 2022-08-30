@@ -4,14 +4,15 @@
     import * as d3 from "d3";
     import * as flubber from 'flubber';
     import data from "$data/coordinates.json";
-    import { color } from "d3";
+    import Icon from "$components/helpers/Icon.svelte";
 
     const copy = getContext("copy");
     const TIMEOUT_DURATION = 5000;
     let timerLocal = null;
+    let playing = true;
 
-    let currentShoe = 0;
-    let nextShoe = currentShoe + 1;
+    export let currentShoe;
+    export let nextShoe;
 
     const fallbackColor ="#000000";
     const fillMatches = {
@@ -24,7 +25,8 @@
         st8: "#F15E17",
         st9: "#030C28",
         st10: "#071344",
-        st11: "url(#gradientWhite)",
+        //st11: "url(#gradientWhite)",
+        st11: "#FFFFFF",
         st12: "#BC1727",
         st13: "#D81F28",
         st14: "#1D4C96",
@@ -151,9 +153,18 @@
     }
 
     function advanceShoe() {
-        //console.log(currentShoe, nextShoe)
         animateAll({ prev: currentShoe, next: nextShoe });
         timerLocal = d3.timeout(advanceShoe, TIMEOUT_DURATION);
+    }
+
+    function playPause() {
+        playing = !playing
+        if (playing) {
+            advanceShoe()
+        } else if (!playing && timerLocal) {
+            timerLocal.stop();
+		    timerLocal = null;
+        }
     }
 
     onMount(() => {
@@ -163,16 +174,36 @@
 </script>
 
 <div class="shoeWrapper">
+    <button class="autoplayBtn" on:click="{playPause}">
+		{#if playing}
+			<Icon name="pause" width="1.5rem" height="1.5rem" stroke="#4729fc"/>
+		{:else}
+			<Icon name="play" width="1.5rem" height="1.5rem" stroke="#4729fc"/>
+		{/if}
+	</button>
     {@html shoeSvg}
     <div class="imgOverlays">
         {#each copy.shoes as shoe}
             <img src="assets/images/details/shoe{shoe.shoeID}_detail.png"
-                id="overlay_shoe{shoe.shoeID}">
+                id="overlay_shoe{shoe.shoeID}"
+                alt="shoe details like stitches, logos, and writing for the {shoe.shoeName}">
         {/each}
     </div>
 </div>
 
 <style>
+    .autoplayBtn {
+        position: absolute;
+        background-color: var(--color-white);
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1.5rem;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .shoeWrapper {
         max-width: 960px;
         width: 100%;
