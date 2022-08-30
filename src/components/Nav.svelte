@@ -53,14 +53,16 @@
         display: flex;
         flex-direction: row;
         overflow-x: hidden;
+        background-color: #2906fc;
     }
 
     .navWrapper {
-        min-width: 100px;
-        width: 100px;
+        width: 7rem;
+        min-width: 7rem;
         display: flex;
 		flex-direction: column;
 		align-items: center;
+        padding: 1rem 0 0 0;
     }
 
     .navWrapper div {
@@ -71,7 +73,7 @@
     }
 
     .navShoe {
-        width: 75%;
+        width: 50%;
         pointer-events: none;
     }
 
@@ -81,5 +83,7 @@
 		width: 100%;
 		font-size: var(--14px);
 		color: var(--color-white);
+        margin: 0.5rem 0 1rem 0;
+        line-height: 1.25;
 	}
 </style>

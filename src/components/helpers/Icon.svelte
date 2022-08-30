@@ -8,19 +8,22 @@
 	export let height = "1em";
 	export let stroke = undefined;
 	export let strokeWidth = undefined;
+	export let fill = undefined;
+	export let marginLeft = undefined;
 
 	$: icon = feather.icons[name];
 	$: rotation = directions.indexOf(direction) * 45;
 	$: if (icon) {
 		if (stroke) icon.attrs["stroke"] = stroke;
 		if (strokeWidth) icon.attrs["stroke-width"] = strokeWidth;
+		if (fill) icon.attrs["fill"] = fill;
 	}
 </script>
 
 {#if icon}
 	<svg
 		{...icon.attrs}
-		style="width: {width}; height: {height}; transform: rotate({rotation}deg);"
+		style="width: {width}; height: {height}; transform: rotate({rotation}deg); margin-left:{marginLeft}"
 	>
 		<g>
 			{@html icon.contents}

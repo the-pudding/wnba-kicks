@@ -92,6 +92,7 @@
 		padding: 2rem;
 		font-family: var(--sans);
 		color: var(--color-white);
+		z-index: 999;
 	}
 
 	h5 {
