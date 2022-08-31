@@ -4,27 +4,27 @@
 	import Nav from "$components/Nav.svelte";
 	import ShoeShapes from "$components/ShoeShapes.svelte";
 	import Details from "$components/Details.svelte";
-	import { currShoeSTORE, nextShoeSTORE } from "$stores/misc.js"
+	import { currentShoe, nextShoe } from "$stores/misc.js"
 	import { get } from "svelte/store";
 	// import Footer from "$components/Footer.svelte";
 
 	const copy = getContext("copy");
 	let copyShift = copy.shoes.slice(1);
-	let currentShoe = +0;
-    let nextShoe = currentShoe + 1;
 </script>
 
 <Header />
-<Nav copyShift={copyShift} currentShoe={currentShoe} nextShoe={nextShoe} />
+<Nav copyShift={copyShift} />
 
 <div class="content-wrapper">
-	<ShoeShapes currentShoe={currentShoe} nextShoe={nextShoe} />
-	<Details currentShoe={currentShoe} nextShoe={nextShoe} />
+	<ShoeShapes />
+	<Details />
 </div>
 
 <div class='content-bg'>
 	<div class='skewed-bg'></div>
-	<div class='number-bg'><p class='big-num'>1995</p></div>
+	{#if $currentShoe> 0}
+		<div class='number-bg'><p class='big-num'>{copy.shoes[$currentShoe].shoeDate}</p></div>
+	{/if}
 </div>
 <!-- <Demo /> -->
 <!-- <Footer /> -->

@@ -90,3 +90,55 @@ h5 {
 h6 {
 	font-size: var(--20px, 20px);
 }
+
+#gradientWhite {
+	--color-stop-1: #FFFFFF;
+	--color-stop-2: #FCFCFC;
+	--color-stop-3: #F4F4F4;
+	--color-stop-4: #E6E6E6;
+	--color-stop-5: #E6E6E6;
+}
+
+#parkerBluePurple {
+	--color-stop-1: #C7E6E6;
+	--color-stop-2: #4A46A5;
+}
+
+#parkerYellowOrange {
+	--color-stop-1: #F9E26E;
+	--color-stop-2: #FF8A3A;
+}
+
+#eddPurpleYellow {
+	--color-stop-1: #382E88;
+	--color-stop-2: #574A76;
+	--color-stop-3: #9F884E;
+	--color-stop-4: #D3B630;
+	--color-stop-5: #F3D21E;
+	--color-stop-6: #FFDD17;  
+}
+
+#eddRedPurple {
+	--color-stop-1: #D81F28;
+	--color-stop-2: #AA2C51;
+	--color-stop-3: #763A7E;
+	--color-stop-4: #56439A;
+	--color-stop-5: #4A46A5;
+}
+
+#stewartNeonBlack {
+	--color-stop-1: #EEF91C;
+	--color-stop-2: #ECF91C;
+	--color-stop-3: #E5F71E;
+	--color-stop-4: #E3F71E;
+	--color-stop-5: #E1F51E;
+	--color-stop-6: #DBEE1D;
+	--color-stop-7: #D0E21B;
+	--color-stop-8: #C0D119;
+	--color-stop-9: #ACBB17;
+	--color-stop-10: #93A013;
+	--color-stop-11: #757F0F;
+	--color-stop-12: #52590B;
+	--color-stop-13: #2B2F06;
+	--color-stop-14: #000000;
+}

@@ -1,51 +1,49 @@
 <script>
     import { onMount } from "svelte";
-    import { select, selectAll } from "d3";
+    import * as d3 from "d3";
 
     export let copyShift;
-    export let currentShoe;
-    export let nextShoe;
 
-    let activeShoe;
+    let Carousel; // for saving Carousel component class
+    let carousel; // for calling methods of the carousel instance
+    let w;
+    let shoeLength = copyShift.length;
+    let active = false;
 
-    onMount(() => {
-	})
+    onMount(async () => {
+        const module = await import('svelte-carousel');
+        Carousel = module.default;
+        console.log(w, shoeLength)
+    });
 
-    function handleDrag(event) {
-        console.log("drag");
-
-        const { x } = event;
-    }
-
-    function handleDragStart() {
-        console.log("start")
-    }
-
-    function handleDragEnd() {
-        console.log("end")
-    }
-
-    function handleShoeClick() {
+    function handleClick() {
         let shoeID = this.id;
-        shoeID = shoeID.slice(4)
+        shoeID = shoeID.split("_")[1];
+        
+        
+        active = !active
     }
 </script>
+
+<svelte:window bind:outerWidth={w}/>
 <nav>
-    {#each copyShift as shoe}
-    <div class="navWrapper" 
-        draggable=true 
-        on:drag="{handleDrag}"
-        on:dragstart="{handleDragStart}"
-        on:dragend="{handleDragEnd}">
-        <div on:click="{handleShoeClick}" id="shoe{shoe.shoeID}" class="navElement">
+    <svelte:component 
+        this={Carousel}
+        bind:this={carousel}
+        particlesToShow={10}
+        particlesToScroll={1}
+        arrows={false}
+        dots={false}>
+        {#each copyShift as shoe}
+        <div class="navBlock" id="nav_{shoe.shoeID}" on:click={handleClick} class:active>
             <img src="assets/images/thumbnails/shoe{shoe.shoeID}_thumbnail.png"
             alt="illustration of {shoe.shoePlayer} {shoe.shoeName} shoe"
             class="navShoe"
             id="shoe{shoe.shoeID}_img">
             <p>{shoe.shoeName}</p>
         </div>
-    </div>
-    {/each}
+        {/each}
+    </svelte:component>
 </nav>
 
 <style>
@@ -56,28 +54,26 @@
         background-color: #2906fc;
     }
 
-    .navWrapper {
-        width: 7rem;
-        min-width: 7rem;
+    .navBlock {
         display: flex;
-		flex-direction: column;
-		align-items: center;
-        padding: 1rem 0 0 0;
-    }
-
-    .navWrapper div {
-        width: 100%;
-        display: flex;
-		flex-direction: column;
-		align-items: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 0.25rem;
     }
 
     .navShoe {
-        width: 50%;
+        width: 60%;
         pointer-events: none;
+        user-select: none;
+        user-drag: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
     }
 
-    .navWrapper p {
+    .navBlock p {
 		font-family: var(--sans);
 		text-align: center;
 		width: 100%;
@@ -85,5 +81,13 @@
 		color: var(--color-white);
         margin: 0.5rem 0 1rem 0;
         line-height: 1.25;
+        pointer-events: none;
+        user-select: none;
+        user-drag: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
 	}
 </style>

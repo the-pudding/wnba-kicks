@@ -5,6 +5,7 @@
     import * as flubber from 'flubber';
     import data from "$data/coordinates.json";
     import Icon from "$components/helpers/Icon.svelte";
+    import { currentShoe, nextShoe } from "$stores/misc.js";
 
     const copy = getContext("copy");
     const TIMEOUT_DURATION = 5000;
@@ -12,9 +13,6 @@
     let playing = true;
     let introText;
     let loadingText;
-
-    export let currentShoe;
-    export let nextShoe;
 
     const fallbackColor ="#000000";
     const fillMatches = {
@@ -27,8 +25,8 @@
         st8: "#F15E17",
         st9: "#030C28",
         st10: "#071344",
-        //st11: "url(#gradientWhite)",
-        st11: "#FFFFFF",
+        st11: "url(#gradientWhite)",
+        //st11: "#FFFFFF",
         st12: "#BC1727",
         st13: "#D81F28",
         st14: "#1D4C96",
@@ -146,9 +144,7 @@
         
         path.exit().remove();
 
-        currentShoe = next;
-
-        currentShoe == 22 ? nextShoe = 1 : nextShoe = currentShoe + 1;
+        $currentShoe = next;
 
         hideImage(prev);
 	    revealImage(next);
@@ -156,13 +152,12 @@
     }
 
     function advanceShoe() {
-        animateAll({ prev: currentShoe, next: nextShoe });
+        animateAll({ prev: $currentShoe, next: $nextShoe });
         timerLocal = d3.timeout(advanceShoe, TIMEOUT_DURATION);
     }
 
     function updateText(prev) {
         if (prev == 0) {
-            console.log(prev)
             introText.transition()
                 .duration(350)
                 .style("opacity", 0);  
@@ -292,58 +287,6 @@
 
     #overlay_shoe0 {
         opacity: 1;
-    }
-
-    :global(#gradientWhite) {
-        --color-stop-1: #FFFFFF,
-        --color-stop-2: #FCFCFC,
-        --color-stop-3: #F4F4F4,
-        --color-stop-4: #E6E6E6,
-        --color-stop-5: #E6E6E6
-    }
-
-    :global(#parkerBluePurple) {
-        --color-stop-1: #C7E6E6,
-        --color-stop-2: #4A46A5,
-    }
-
-    :global(#parkerYellowOrange) {
-        --color-stop-1: #F9E26E,
-        --color-stop-2: #FF8A3A,
-    }
-
-    :global(#eddPurpleYellow) {
-        --color-stop-1: #382E88,
-        --color-stop-2: #574A76,
-        --color-stop-3: #9F884E,
-        --color-stop-4: #D3B630,
-        --color-stop-5: #F3D21E,
-        --color-stop-6: #FFDD17  
-    }
-
-    :global(#eddRedPurple) {
-        --color-stop-1: #D81F28,
-        --color-stop-2: #AA2C51,
-        --color-stop-3: #763A7E,
-        --color-stop-4: #56439A,
-        --color-stop-5: #4A46A5,
-    }
-
-    :global(#stewartNeonBlack) {
-        --color-stop-1: #EEF91C,
-        --color-stop-2: #ECF91C,
-        --color-stop-3: #E5F71E,
-        --color-stop-4: #E3F71E,
-        --color-stop-5: #E1F51E,
-        --color-stop-6: #DBEE1D,
-        --color-stop-7: #D0E21B,
-        --color-stop-8: #C0D119,
-        --color-stop-9: #ACBB17,
-        --color-stop-10: #93A013,
-        --color-stop-11: #757F0F,
-        --color-stop-12: #52590B,
-        --color-stop-13: #2B2F06,
-        --color-stop-14: #000000,
     }
 
     :global(#shoe0 text) {

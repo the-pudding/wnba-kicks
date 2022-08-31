@@ -1,38 +1,35 @@
 <script>
     import { getContext } from "svelte";
     import { fly } from 'svelte/transition';
-    import { currShoeSTORE, nextShoeSTORE } from "$stores/misc.js"
-	import { get } from "svelte/store";
+    import { currentShoe, nextShoe} from "$stores/misc.js"
 
     const copy = getContext("copy");
+
+    $: shoe = copy.shoes.find(d => +d.shoeID === $currentShoe);
 </script>
 
-{#each copy.shoes as shoe}
-    {@const currShoe = get(currShoeSTORE)}
-    {@const visible=currShoe==+shoe.shoeID}
-    {#if visible}
-        <div class="detailsWrapper" id="details_shoe{shoe.shoeID}" transition:fly="{{ y: 50, duration: 250, delay: 500 }}">
-            <div class="detailsLeft">
-                <div>
-                    <p class="detailsCategory">Player</p>
-                    <p>{shoe.shoePlayer}</p>
-                </div>
-                <div>
-                    <p class="detailsCategory">Brand</p>
-                    <p>{shoe.shoeBrand}</p>
-                </div>
-                <div>
-                    <p class="detailsCategory">Release Date</p>
-                    <p>{shoe.shoeDate}</p>
-                </div>
+{#if shoe.shoeID !== "0"}
+    <div class="detailsWrapper" id="details_shoe{shoe.shoeID}" transition:fly="{{ y: 100, duration: 500 }}">
+        <div class="detailsLeft">
+            <div>
+                <p class="detailsCategory">Player</p>
+                <p>{shoe.shoePlayer}</p>
             </div>
-            <div class="detailsRight">
-                <p class="detailsName">{shoe.shoeName}</p>
-                <p>{@html shoe.shoeDesc}</p>
+            <div>
+                <p class="detailsCategory">Brand</p>
+                <p>{shoe.shoeBrand}</p>
+            </div>
+            <div>
+                <p class="detailsCategory">Release Date</p>
+                <p>{shoe.shoeDate}</p>
             </div>
         </div>
-    {/if}
-{/each}
+        <div class="detailsRight">
+            <p class="detailsName">{shoe.shoeName}</p>
+            <p>{@html shoe.shoeDesc}</p>
+        </div>
+    </div>
+{/if}
 
 <style>
     .detailsWrapper {
