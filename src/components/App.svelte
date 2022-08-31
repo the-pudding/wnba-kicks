@@ -4,28 +4,14 @@
 	import Nav from "$components/Nav.svelte";
 	import ShoeShapes from "$components/ShoeShapes.svelte";
 	import Details from "$components/Details.svelte";
-	import { currShoeSTORE, prevShoeSTORE } from "$stores/misc.js"
+	import { currShoeSTORE, nextShoeSTORE } from "$stores/misc.js"
 	import { get } from "svelte/store";
-	import { select } from "d3";
 	// import Footer from "$components/Footer.svelte";
 
 	const copy = getContext("copy");
 	let copyShift = copy.shoes.slice(1);
 	let currentShoe = +0;
     let nextShoe = currentShoe + 1;
-	let bgYear;
-
-	function updateYear(currentShoe) {
-		console.log("running")
-		//bgYear.text()
-	}
-
-	$: updateYear(currentShoe);
-
-	onMount(() => {
-		bgYear = select(".big-num")
-		//sliderEl.next();
-	})
 </script>
 
 <Header />
@@ -33,7 +19,7 @@
 
 <div class="content-wrapper">
 	<ShoeShapes currentShoe={currentShoe} nextShoe={nextShoe} />
-	<Details />
+	<Details currentShoe={currentShoe} nextShoe={nextShoe} />
 </div>
 
 <div class='content-bg'>
