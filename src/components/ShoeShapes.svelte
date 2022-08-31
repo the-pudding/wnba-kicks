@@ -13,6 +13,7 @@
     let playing = true;
     let introText;
     let loadingText;
+    let navBlocks;
 
     const fallbackColor ="#000000";
     const fillMatches = {

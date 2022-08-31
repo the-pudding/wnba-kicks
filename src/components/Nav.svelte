@@ -13,15 +13,12 @@
     onMount(async () => {
         const module = await import('svelte-carousel');
         Carousel = module.default;
-        console.log(w, shoeLength)
+        //console.log(w, shoeLength)
     });
 
-    function handleClick() {
-        let shoeID = this.id;
-        shoeID = shoeID.split("_")[1];
-        
-        
-        active = !active
+    function handleShoeClick() {
+        let item = d3.select(this);
+        item.classed("is-active", true);
     }
 </script>
 
@@ -31,11 +28,10 @@
         this={Carousel}
         bind:this={carousel}
         particlesToShow={10}
-        particlesToScroll={1}
         arrows={false}
         dots={false}>
         {#each copyShift as shoe}
-        <div class="navBlock" id="nav_{shoe.shoeID}" on:click={handleClick} class:active>
+        <div class="navBlock" id="nav_{shoe.shoeID}" on:click={handleShoeClick}>
             <img src="assets/images/thumbnails/shoe{shoe.shoeID}_thumbnail.png"
             alt="illustration of {shoe.shoePlayer} {shoe.shoeName} shoe"
             class="navShoe"
@@ -58,12 +54,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 0.5rem 0.25rem;
+        opacity: 0.5;
+        transform: scale(0.75);
+		transition: all 300ms;
+    }
+
+    .navBlock:hover {
+        transform: scale(1);
     }
 
     .navShoe {
-        width: 60%;
-        pointer-events: none;
+        width: 100%;
         user-select: none;
         user-drag: none;
         -webkit-user-drag: none;
@@ -77,11 +78,10 @@
 		font-family: var(--sans);
 		text-align: center;
 		width: 100%;
-		font-size: var(--14px);
+		font-size: var(--16px);
 		color: var(--color-white);
         margin: 0.5rem 0 1rem 0;
         line-height: 1.25;
-        pointer-events: none;
         user-select: none;
         user-drag: none;
         -webkit-user-drag: none;
@@ -90,4 +90,10 @@
         -webkit-user-select: none;
         -ms-user-select: none;
 	}
+
+    :global(.is-active) {
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        transition: all 300ms;
+    }
 </style>
