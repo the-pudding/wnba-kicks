@@ -1,7 +1,7 @@
 <script>
     import { getContext } from "svelte";
     import { fly } from 'svelte/transition';
-    import { currShoeSTORE, prevShoeSTORE } from "$stores/misc.js"
+    import { currShoeSTORE, nextShoeSTORE } from "$stores/misc.js"
 	import { get } from "svelte/store";
 
     const copy = getContext("copy");
