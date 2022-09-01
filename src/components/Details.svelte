@@ -4,30 +4,48 @@
     import { currentShoe, nextShoe} from "$stores/misc.js"
 
     const copy = getContext("copy");
+    let w;
 
     $: shoe = copy.shoes.find(d => +d.shoeID === $currentShoe);
 </script>
 
 {#if shoe.shoeID !== "0"}
-    <div class="detailsWrapper" id="details_shoe{shoe.shoeID}" transition:fly="{{ y: 100, duration: 500 }}">
-        <div class="detailsLeft">
-            <div>
+    <div class="detailsWrapper" id="details_shoe{shoe.shoeID}" transition:fly="{{ y: 100, duration: 500 }}" bind:offsetWidth={w}>
+        {#if w > 700}
+            <div class="detailsLeft">
+                <div class="catWrapper">
+                    <p class="detailsCategory">Player</p>
+                    <p>{shoe.shoePlayer}</p>
+                </div>
+                <div class="catWrapper">
+                    <p class="detailsCategory">Brand</p>
+                    <p>{shoe.shoeBrand}</p>
+                </div>
+                <div class="catWrapper">
+                    <p class="detailsCategory">Release Date</p>
+                    <p>{shoe.shoeDate}</p>
+                </div>
+            </div>
+            <div class="detailsRight">
+                <p class="detailsName">{shoe.shoeName}</p>
+                <p>{@html shoe.shoeDesc}</p>
+            </div>
+        {:else}
+            <p class="detailsName">{shoe.shoeName}</p>
+            <div class="catWrapper">
                 <p class="detailsCategory">Player</p>
                 <p>{shoe.shoePlayer}</p>
             </div>
-            <div>
+            <div class="catWrapper">
                 <p class="detailsCategory">Brand</p>
                 <p>{shoe.shoeBrand}</p>
             </div>
-            <div>
+            <div class="catWrapper">
                 <p class="detailsCategory">Release Date</p>
                 <p>{shoe.shoeDate}</p>
             </div>
-        </div>
-        <div class="detailsRight">
-            <p class="detailsName">{shoe.shoeName}</p>
             <p>{@html shoe.shoeDesc}</p>
-        </div>
+        {/if}
     </div>
 {/if}
 
@@ -38,8 +56,9 @@
         margin: 2rem auto;
         font-family: var(--sans);
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         color: var(--color-white);
+        padding: 0 2rem;
     }
 
     :global(.detailsWrapper a) {
@@ -62,10 +81,15 @@
         padding: 0 2rem 0 0;
     }
 
-    .detailsLeft div {
+    .catWrapper {
         display: flex;
         flex-direction: row;
         border-bottom: 1px solid #1d03bc;
+        align-items: center;
+    }
+
+    .catWrapper:last-of-type {
+        margin: 0 0 1rem 0;
     }
 
     .detailsLeft p {
@@ -99,5 +123,16 @@
         font-size: var(--36px) !important;
         text-transform: uppercase;
         letter-spacing: 0.05em;
+    }
+
+    @media only screen and (min-width: 700px) {
+        .detailsWrapper {
+            flex-direction: row;
+        }
+
+        .catWrapper {
+            flex-direction: row;
+            align-items: start;
+        }
     }
 </style>

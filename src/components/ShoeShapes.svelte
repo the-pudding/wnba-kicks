@@ -13,8 +13,11 @@
     let timerLocal = null;
     let introText;
     let loadingText;
-    let navBlocks;
+    let shoeWrapper;
+    let playBtn;
     let playing = true;
+    let w;
+    let h;
 
     function pathsToJSON() {
         const output = [];
@@ -42,18 +45,28 @@
     function advanceShoe() {
         animateAll(data, { prev: $currentShoe, next: $nextShoe });
         updateText( $currentShoe )
+        advanceNav( $currentShoe )
         timerLocal = d3.timeout(advanceShoe, TIMEOUT_DURATION);
     }
 
     function updateText(prev) {
-        if (prev == 1) {
+        if (prev > 0) {
             introText.transition()
                 .duration(350)
                 .style("opacity", 0);  
             loadingText.transition()
                 .duration(350)
-                .style("opacity", 0);  
+                .style("opacity", 0);
+            playBtn.transition()
+                .duration(350)
+                .style("opacity", 1)
+                .style("pointer-events", "auto")
         }
+    }
+
+    function advanceNav(prev) {
+        const navBlocks = d3.selectAll(".navBlock").classed("is-active", false);
+        const item = d3.selectAll(`#nav_${prev}`).classed("is-active", true);
     }
 
     function playPause() {
@@ -67,10 +80,14 @@
     }
 
     onMount(() => {
-		//pathsToJSON();
+		pathsToJSON();
         introText = d3.select(".intro-text");
         loadingText = d3.select(".loading-text");
+        shoeWrapper = d3.select(".shoeWrapper");
+        playBtn = d3.select(".autoplayBtn");
         timerLocal = d3.timeout(advanceShoe, TIMEOUT_DURATION);
+
+        shoeWrapper.style("height", `${w/1.4}`) 
     });
 </script>
 <div class="fullScreen">
@@ -81,7 +98,7 @@
             <Icon name="play" width="1.5rem" height="1.5rem" fill="#4729fc" stroke="none" marginLeft="0.25rem"/>
         {/if}
     </button>
-    <div class="shoeWrapper">
+    <div class="shoeWrapper" bind:offsetWidth={w}>
         <div class='intro-text'><p>A visual history of</p></div>
         <div class='loading-text'><p>Loading shoes <span>.</span><span>.</span><span>.</span></p></div>
         {@html shoeSvg}
@@ -111,6 +128,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        opacity: 0;
+        pointer-events: none;
     }
 
     .intro-text {

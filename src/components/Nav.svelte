@@ -10,13 +10,14 @@
     let Carousel; // for saving Carousel component class
     let carousel; // for calling methods of the carousel instance
     let w;
-    let shoeLength = copyShift.length;
+    let shoeW = 140;
     let navBlocks;
+    let particleNum;
 
     onMount(async () => {
         const module = await import('svelte-carousel');
         Carousel = module.default;
-        //console.log(w, shoeLength)
+        particleNum = Math.round(w/shoeW);
     });
 
     function handleShoeClick() {
@@ -36,7 +37,8 @@
     <svelte:component 
         this={Carousel}
         bind:this={carousel}
-        particlesToShow={10}
+        particlesToShow={particleNum}
+        particlesToScroll={particleNum/2}
         arrows={false}
         dots={false}>
         {#each copyShift as shoe}
@@ -87,7 +89,7 @@
 		font-family: var(--sans);
 		text-align: center;
 		width: 100%;
-		font-size: var(--16px);
+		font-size: var(--14px);
 		color: var(--color-white);
         margin: 0.5rem 0 1rem 0;
         line-height: 1.25;
@@ -98,6 +100,7 @@
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
+        margin: 0.5rem 0;
 	}
 
     :global(.is-active) {
