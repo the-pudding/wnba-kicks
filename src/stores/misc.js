@@ -5,3 +5,4 @@ export const nextShoe = derived(currentShoe, ($currentShoe, set) => {
     if ($currentShoe == 22) set(1);
     else set($currentShoe + 1);
 });
+export const playing = writable(false);

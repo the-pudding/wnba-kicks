@@ -1,6 +1,9 @@
 <script>
     import { onMount } from "svelte";
     import * as d3 from "d3";
+    import animateAll from "$utils/animateAll.js";
+    import { currentShoe, nextShoe } from "$stores/misc.js";
+    import data from "$data/coordinates.json";
 
     export let copyShift;
 
@@ -8,7 +11,7 @@
     let carousel; // for calling methods of the carousel instance
     let w;
     let shoeLength = copyShift.length;
-    let active = false;
+    let navBlocks;
 
     onMount(async () => {
         const module = await import('svelte-carousel');
@@ -17,8 +20,14 @@
     });
 
     function handleShoeClick() {
-        let item = d3.select(this);
+        const item = d3.select(this);
+        const navBlocks = d3.selectAll(".navBlock").classed("is-active", false);
         item.classed("is-active", true);
+        const next = +this.id.split("_")[1];
+        console.log($currentShoe);
+        if ($currentShoe !== next) {
+            animateAll(data, { prev: $currentShoe, next: next })
+        }
     }
 </script>
 
