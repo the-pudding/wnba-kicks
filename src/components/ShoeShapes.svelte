@@ -5,7 +5,7 @@
     import * as flubber from 'flubber';
     import data from "$data/coordinates.json";
     import Icon from "$components/helpers/Icon.svelte";
-    import { currentShoe, nextShoe } from "$stores/misc.js";
+    import { currentShoe, nextShoe, playing } from "$stores/misc.js";
     import animateAll from "$utils/animateAll.js";
 
     const copy = getContext("copy");
@@ -15,7 +15,6 @@
     let loadingText;
     let shoeWrapper;
     let playBtn;
-    let playing = true;
     let w;
     let h;
 
@@ -70,10 +69,12 @@
     }
 
     function playPause() {
-        playing = !playing
-        if (playing) {
+        console.log($playing)
+        playing.set(!$playing)
+        console.log($playing)
+        if ($playing) {
             advanceShoe()
-        } else if (!playing && timerLocal) {
+        } else if (!$playing && timerLocal) {
             timerLocal.stop();
 		    timerLocal = null;
         }
@@ -92,7 +93,7 @@
 </script>
 <div class="fullScreen">
     <button class="autoplayBtn" on:click="{playPause}">
-        {#if playing}
+        {#if $playing}
             <Icon name="pause" width="1.5rem" height="1.5rem" fill="#4729fc" stroke="none"/>
         {:else}
             <Icon name="play" width="1.5rem" height="1.5rem" fill="#4729fc" stroke="none" marginLeft="0.25rem"/>
