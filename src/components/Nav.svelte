@@ -13,6 +13,12 @@
     let shoeW = 140;
     let navBlocks;
     let particleNum;
+    let carouselContainer;
+
+    function updateNavWidth(w) {
+        console.log(w)
+        particleNum = Math.round(w/shoeW);
+    }
 
     onMount(async () => {
         const module = await import('svelte-carousel');
@@ -25,9 +31,10 @@
         const navBlocks = d3.selectAll(".navBlock").classed("is-active", false);
         item.classed("is-active", true);
         const next = +this.id.split("_")[1];
-        console.log($currentShoe);
         if ($currentShoe !== next) {
             animateAll(data, { prev: $currentShoe, next: next })
+            //carousel.goTo(1, { animated: true })
+            //carouselContainer.style("transform", "translateX(100px)")
         }
     }
 </script>

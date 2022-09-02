@@ -69,9 +69,7 @@
     }
 
     function playPause() {
-        console.log($playing)
         playing.set(!$playing)
-        console.log($playing)
         if ($playing) {
             advanceShoe()
         } else if (!$playing && timerLocal) {
