@@ -6,11 +6,11 @@
     import data from "$data/coordinates.json";
     import Icon from "$components/helpers/Icon.svelte";
     import { currentShoe, nextShoe, playing } from "$stores/misc.js";
+    import { timer, elapsed } from "$stores/timer.js";
     import animateAll from "$utils/animateAll.js";
 
     const copy = getContext("copy");
     const TIMEOUT_DURATION = 5000;
-    let timerLocal = null;
     let introText;
     let loadingText;
     let shoeWrapper;
@@ -45,7 +45,7 @@
         animateAll(data, { prev: $currentShoe, next: $nextShoe });
         updateText( $currentShoe )
         advanceNav( $currentShoe )
-        timerLocal = d3.timeout(advanceShoe, TIMEOUT_DURATION);
+        //timer = d3.timeout(advanceShoe, TIMEOUT_DURATION);
     }
 
     function updateText(prev) {
@@ -71,22 +71,32 @@
     function playPause() {
         playing.set(!$playing)
         if ($playing) {
-            advanceShoe()
-        } else if (!$playing && timerLocal) {
-            timerLocal.stop();
-		    timerLocal = null;
+            timer.reset();
+            timer.start();
+            advanceShoe();
+        } else if (!$playing && timer) {
+            timer.stop();
         }
+    }
+
+    function updateHeight(w) {
+        if (w) { h = w/1.4; } 
+    }
+
+    $: updateHeight(w)
+
+    $: if ($elapsed >= TIMEOUT_DURATION) {
+        advanceShoe();
+        timer.reset();
+        timer.start();
     }
 
     onMount(() => {
 		pathsToJSON();
         introText = d3.select(".intro-text");
         loadingText = d3.select(".loading-text");
-        shoeWrapper = d3.select(".shoeWrapper");
         playBtn = d3.select(".autoplayBtn");
-        timerLocal = d3.timeout(advanceShoe, TIMEOUT_DURATION);
-
-        shoeWrapper.style("height", `${w/1.4}`) 
+        timer.start();
     });
 </script>
 <div class="fullScreen">
@@ -97,7 +107,7 @@
             <Icon name="play" width="1.5rem" height="1.5rem" fill="#4729fc" stroke="none" marginLeft="0.25rem"/>
         {/if}
     </button>
-    <div class="shoeWrapper" bind:offsetWidth={w}>
+    <div class="shoeWrapper" bind:offsetWidth={w} style:height={`${h}px`}>
         <div class='intro-text'><p>A visual history of</p></div>
         <div class='loading-text'><p>Loading shoes <span>.</span><span>.</span><span>.</span></p></div>
         {@html shoeSvg}
@@ -175,7 +185,6 @@
         width: 100%;
         margin: 0 auto;
         position: relative;
-        height: 660px;
     }
 
     :global(.shoeWrapper svg) {

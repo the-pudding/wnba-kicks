@@ -2,8 +2,9 @@
     import { onMount } from "svelte";
     import * as d3 from "d3";
     import animateAll from "$utils/animateAll.js";
-    import { currentShoe, nextShoe } from "$stores/misc.js";
+    import { currentShoe, nextShoe, playing } from "$stores/misc.js";
     import data from "$data/coordinates.json";
+    import { timer, elapsed } from "$stores/timer.js";
 
     export let copyShift;
 
@@ -15,10 +16,15 @@
     let particleNum;
     let carouselContainer;
 
-    function updateNavWidth(w) {
-        console.log(w)
-        particleNum = Math.round(w/shoeW);
+    function updateParticles(w) {
+        console.log("change")
+        // if (w) { 
+        //     particleNum = Math.round(w/shoeW); 
+        //     console.log(particleNum);
+        // } 
     }
+
+    $: updateParticles(w)
 
     onMount(async () => {
         const module = await import('svelte-carousel');
@@ -31,6 +37,8 @@
         const navBlocks = d3.selectAll(".navBlock").classed("is-active", false);
         item.classed("is-active", true);
         const next = +this.id.split("_")[1];
+        playing.set(!$playing)
+        timer.stop();
         if ($currentShoe !== next) {
             animateAll(data, { prev: $currentShoe, next: next })
             //carousel.goTo(1, { animated: true })
