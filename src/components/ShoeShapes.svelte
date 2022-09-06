@@ -146,23 +146,23 @@
         color: var(--color-white);
         text-transform: uppercase;
         letter-spacing: 0.05em;
-        font-size: var(--48px);
+        font-size: var(--24px);
         text-align: center;
         position: absolute;
         left: 50%;
-        top: 10%;
+        top: 0%;
         transform: translateX(-50%);
     }
 
     .loading-text {
         font-family: var(--sans);
         color: var(--color-white);
-        font-size: var(--18px);
+        font-size: var(--14px);
         text-align: center;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 10%;
+        bottom: 5%;
     }
 
     .loading-text span {
@@ -221,4 +221,37 @@
             opacity: .2;
         }
     }
+
+    @media only screen and (min-width: 400px) {
+		.intro-text {
+			font-size: var(--36px);
+            top: 5%;
+		}
+        .loading-text {
+            font-size: var(--18px);
+            bottom: 5%;
+        }
+	}
+
+	@media only screen and (min-width: 600px) {
+		.intro-text{
+			font-size: var(--40px);
+            top: 10%;
+		}
+        .loading-text {
+            font-size: var(--18px);
+            bottom: 10%;
+        }
+	}
+
+	@media only screen and (min-width: 800px) {
+		.intro-text {
+			font-size: var(--48px);
+            top: 10%;
+		}
+        .loading-text {
+            font-size: var(--18px);
+            bottom: 10%;
+        }
+	}
 </style>

@@ -12,11 +12,11 @@
     let carousel; // for calling methods of the carousel instance
     let w;
     let shoeW = 120;
+    let shoeLength = copyShift.length
     let particleNum;
     let carouselContainer;
 
     function updateText($currentShoe) {
-        console.log($currentShoe)
         if ($currentShoe > 0) {
             d3.selectAll(".navBlock").style("pointer-events", "auto");
         }
@@ -27,8 +27,15 @@
         return particleNum
     }
 
+    function updateNavPos($currentShoe) {
+        console.log($currentShoe, particleNum, shoeLength)
+        let pages = Math.round(shoeLength/particleNum)
+        console.log(pages)
+    }
+
     $: updateParticles(w);
     $: updateText($currentShoe);
+    $: updateNavPos($currentShoe);
 
     onMount(async () => {
         const module = await import('svelte-carousel');
@@ -36,6 +43,7 @@
     });
 
     function handleShoeClick() {
+        console.log("click")
         const item = d3.select(this);
         const navBlocks = d3.selectAll(".navBlock").classed("is-active", false);
         item.classed("is-active", true);
@@ -44,8 +52,6 @@
         timer.stop();
         if ($currentShoe !== next) {
             animateAll(data, { prev: $currentShoe, next: next })
-            //carousel.goTo(1, { animated: true })
-            //carouselContainer.style("transform", "translateX(100px)")
         }
     }
 </script>

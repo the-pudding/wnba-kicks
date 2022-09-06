@@ -1,16 +1,16 @@
 <script>
     import { getContext } from "svelte";
-    import { fly } from 'svelte/transition';
+    import { fly, fade } from 'svelte/transition';
     import { currentShoe, nextShoe} from "$stores/misc.js"
 
     const copy = getContext("copy");
     let w;
-
-    $: shoe = copy.shoes.find(d => +d.shoeID === $currentShoe);
 </script>
 
-{#if shoe.shoeID !== "0"}
-    <div class="detailsWrapper" id="details_shoe{shoe.shoeID}" transition:fly="{{ y: 100, duration: 500 }}" bind:offsetWidth={w}>
+{#each copy.shoes as shoe, i}
+    {@const visible = i == $currentShoe}
+    {#if visible && $currentShoe > 0}
+    <div class="detailsWrapper" id="details_shoe{shoe.shoeID}" in:fly="{{ y: 200, duration: 1000, delay: 500 }}" out:fade bind:offsetWidth={w}>
         {#if w > 700}
             <div class="detailsLeft">
                 <div class="catWrapper">
@@ -47,7 +47,8 @@
             <p>{@html shoe.shoeDesc}</p>
         {/if}
     </div>
-{/if}
+    {/if}
+{/each}
 
 <style>
     .detailsWrapper {

@@ -27,7 +27,7 @@
 <Header />
 <Nav copyShift={copyShift} />
 
-<div class="mega-wrapper" style="height:{h}px;">
+<div class="mega-wrapper" style="height:{h+100}px;">
 	<div class="content-wrapper" bind:clientWidth={h}>
 		<ShoeShapes />
 		<Details />
@@ -57,7 +57,7 @@
 	.content-bg {
 		position: relative;
 		width: 100%;
-		height: 100%;
+		height: 200%;
 		z-index: 1;
 		overflow: hidden;
 	}
@@ -79,12 +79,30 @@
 	}
 
 	.big-num {
-		font-size: 20rem;
+		font-size: 7rem;
 		user-select: none;
 		margin: 0 0 0 10%;
 		padding: 0;
 		text-align: left;
 		font-family: var(--sans-display);
 		color: #2508f2;
+	}
+
+	@media only screen and (min-width: 400px) {
+		.big-num {
+			font-size: 10rem;
+		}
+	}
+
+	@media only screen and (min-width: 600px) {
+		.big-num {
+			font-size: 15rem;
+		}
+	}
+
+	@media only screen and (min-width: 800px) {
+		.big-num {
+			font-size: 20rem;
+		}
 	}
 </style>
