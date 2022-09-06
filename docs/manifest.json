@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "_app/immutable/start-2eb36bf4.js",
+    "file": "_app/immutable/start-4e672f8f.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -13,7 +13,7 @@
       ".svelte-kit/runtime/components/error.svelte",
       "src/routes/demo/elements.svelte",
       "src/routes/demo/fonts.svelte",
-      "_index-3da7d77c.js"
+      "_index-f050c785.js"
     ]
   },
   "src/routes/__layout.svelte": {
@@ -64,12 +64,12 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "_app/immutable/pages/index.svelte-e24ff6fe.js",
+    "file": "_app/immutable/pages/index.svelte-ac4f7a31.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "imports": [
       "_index-58d72424.js",
-      "_index-3da7d77c.js",
+      "_index-f050c785.js",
       "_transform-ffa743a8.js",
       "_preload-helper-7f45cd29.js"
     ]
@@ -89,8 +89,8 @@
   "_transform-ffa743a8.js": {
     "file": "_app/immutable/chunks/transform-ffa743a8.js"
   },
-  "_index-3da7d77c.js": {
-    "file": "_app/immutable/chunks/index-3da7d77c.js",
+  "_index-f050c785.js": {
+    "file": "_app/immutable/chunks/index-f050c785.js",
     "isDynamicEntry": true,
     "imports": [
       "_index-58d72424.js",
@@ -105,12 +105,12 @@
     ]
   },
   "node_modules/svelte-carousel/src/main.js": {
-    "file": "_app/immutable/chunks/main-e8b40142.js",
+    "file": "_app/immutable/chunks/main-7087379b.js",
     "src": "node_modules/svelte-carousel/src/main.js",
     "isDynamicEntry": true,
     "imports": [
       "_index-58d72424.js",
-      "_index-3da7d77c.js",
+      "_index-f050c785.js",
       "_transform-ffa743a8.js",
       "_preload-helper-7f45cd29.js"
     ],
@@ -118,13 +118,13 @@
       "_app/immutable/assets/main-facf4390.css"
     ]
   },
-  "src/routes/demo/fonts.css": {
-    "file": "_app/immutable/assets/fonts-694798f8.css",
-    "src": "src/routes/demo/fonts.css"
-  },
   "src/routes/demo/elements.css": {
     "file": "_app/immutable/assets/elements-83b17d31.css",
     "src": "src/routes/demo/elements.css"
+  },
+  "src/routes/demo/fonts.css": {
+    "file": "_app/immutable/assets/fonts-694798f8.css",
+    "src": "src/routes/demo/fonts.css"
   },
   "src/routes/__layout.css": {
     "file": "_app/immutable/assets/__layout-474a5897.css",
