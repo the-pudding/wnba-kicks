@@ -15,6 +15,7 @@
     let loadingText;
     let shoeWrapper;
     let playBtn;
+    let navBlocks;
     let w;
     let h;
 
@@ -43,9 +44,8 @@
 
     function advanceShoe() {
         animateAll(data, { prev: $currentShoe, next: $nextShoe });
-        updateText( $currentShoe )
-        advanceNav( $currentShoe )
-        //timer = d3.timeout(advanceShoe, TIMEOUT_DURATION);
+        updateText( $currentShoe );
+        advanceNav( $currentShoe );
     }
 
     function updateText(prev) {
@@ -59,7 +59,7 @@
             playBtn.transition()
                 .duration(350)
                 .style("opacity", 1)
-                .style("pointer-events", "auto")
+                .style("pointer-events", "auto");
         }
     }
 

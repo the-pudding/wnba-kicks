@@ -99,10 +99,11 @@
 		margin-bottom: 3rem;
 	}
 
-	.story a {
+	:global(.story a) {
 		display: block;
 		font-weight: 700;
 		text-decoration: none;
+		border-bottom: none;
 	}
 
 	.story span {

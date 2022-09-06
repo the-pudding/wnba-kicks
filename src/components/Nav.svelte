@@ -11,25 +11,28 @@
     let Carousel; // for saving Carousel component class
     let carousel; // for calling methods of the carousel instance
     let w;
-    let shoeW = 140;
-    let navBlocks;
+    let shoeW = 120;
     let particleNum;
     let carouselContainer;
 
-    function updateParticles(w) {
-        console.log("change")
-        // if (w) { 
-        //     particleNum = Math.round(w/shoeW); 
-        //     console.log(particleNum);
-        // } 
+    function updateText($currentShoe) {
+        console.log($currentShoe)
+        if ($currentShoe > 0) {
+            d3.selectAll(".navBlock").style("pointer-events", "auto");
+        }
     }
 
-    $: updateParticles(w)
+    function updateParticles(w) {
+        particleNum = Math.round(w/shoeW);
+        return particleNum
+    }
+
+    $: updateParticles(w);
+    $: updateText($currentShoe);
 
     onMount(async () => {
         const module = await import('svelte-carousel');
         Carousel = module.default;
-        particleNum = Math.round(w/shoeW);
     });
 
     function handleShoeClick() {
@@ -47,12 +50,12 @@
     }
 </script>
 
-<svelte:window bind:outerWidth={w}/>
+<svelte:window bind:innerWidth={w}/>
 <nav>
     <svelte:component 
         this={Carousel}
         bind:this={carousel}
-        particlesToShow={particleNum}
+        particlesToShow={updateParticles(w)}
         particlesToScroll={particleNum/2}
         arrows={false}
         dots={false}>
@@ -83,6 +86,8 @@
         opacity: 0.5;
         transform: scale(0.75);
 		transition: all 300ms;
+        pointer-events: none;
+        cursor: pointer;
     }
 
     .navBlock:hover {

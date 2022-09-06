@@ -113,5 +113,4 @@ export default function animateAll(data, { prev, next }) {
 
     hideImage(prev);
 	revealImage(next);
-    // updateText(prev);
 }

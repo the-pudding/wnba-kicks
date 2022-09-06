@@ -6,40 +6,58 @@
 	import Details from "$components/Details.svelte";
 	import { currentShoe, nextShoe } from "$stores/misc.js"
 	import { get } from "svelte/store";
-	// import Footer from "$components/Footer.svelte";
+	import Footer from "$components/Footer.svelte";
 
 	const copy = getContext("copy");
 	let copyShift = copy.shoes.slice(1);
+	let h;
+
+	// function updateHeight(h) {
+    //     h = h
+	// 	console.log(h)
+    // }
+
+	// $: updateHeight(h)
+
+	onMount(() => {
+        //console.log(h)
+    });
 </script>
 
 <Header />
 <Nav copyShift={copyShift} />
 
-<div class="content-wrapper">
-	<ShoeShapes />
-	<Details />
-</div>
-
-<div class='content-bg'>
-	<div class='skewed-bg'></div>
-	{#if $currentShoe> 0}
-		<div class='number-bg'><p class='big-num'>{copy.shoes[$currentShoe].shoeDate}</p></div>
-	{/if}
+<div class="mega-wrapper" style="height:{h}px;">
+	<div class="content-wrapper" bind:clientWidth={h}>
+		<ShoeShapes />
+		<Details />
+	</div>
+	
+	<div class='content-bg'>
+		<div class='skewed-bg'></div>
+		{#if $currentShoe> 0}
+			<div class='number-bg'><p class='big-num'>{copy.shoes[$currentShoe].shoeDate}</p></div>
+		{/if}
+	</div>
 </div>
 <!-- <Demo /> -->
-<!-- <Footer /> -->
+<Footer />
 
 <style>
+	.mega-wrapper {
+		position: relative;
+		min-height: 100vh;
+		margin-bottom: 3rem;
+	}
 	.content-wrapper {
 		position: absolute;
 		width: 100%;
-		height: 100vh;
 		z-index: 998;
 	}
 	.content-bg {
-		position: absolute;
+		position: relative;
 		width: 100%;
-		height: 100vh;
+		height: 100%;
 		z-index: 1;
 		overflow: hidden;
 	}
