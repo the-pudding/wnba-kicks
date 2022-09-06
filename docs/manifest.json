@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "_app/immutable/start-66d9d47b.js",
+    "file": "_app/immutable/start-f75f00e2.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -13,7 +13,7 @@
       ".svelte-kit/runtime/components/error.svelte",
       "src/routes/demo/elements.svelte",
       "src/routes/demo/fonts.svelte",
-      "_index-323609f2.js"
+      "_index-7906f2d5.js"
     ]
   },
   "src/routes/__layout.svelte": {
@@ -64,12 +64,12 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "_app/immutable/pages/index.svelte-72d1d570.js",
+    "file": "_app/immutable/pages/index.svelte-359c83f8.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "imports": [
       "_index-3e1adac4.js",
-      "_index-323609f2.js",
+      "_index-7906f2d5.js",
       "_transform-ffa743a8.js",
       "_preload-helper-bed30d68.js"
     ]
@@ -89,8 +89,8 @@
   "_transform-ffa743a8.js": {
     "file": "_app/immutable/chunks/transform-ffa743a8.js"
   },
-  "_index-323609f2.js": {
-    "file": "_app/immutable/chunks/index-323609f2.js",
+  "_index-7906f2d5.js": {
+    "file": "_app/immutable/chunks/index-7906f2d5.js",
     "isDynamicEntry": true,
     "imports": [
       "_index-3e1adac4.js",
@@ -101,16 +101,16 @@
       "node_modules/svelte-carousel/src/main.js"
     ],
     "css": [
-      "_app/immutable/assets/index-9cf8be8d.css"
+      "_app/immutable/assets/index-f298fc84.css"
     ]
   },
   "node_modules/svelte-carousel/src/main.js": {
-    "file": "_app/immutable/chunks/main-cabfe14c.js",
+    "file": "_app/immutable/chunks/main-eab6c218.js",
     "src": "node_modules/svelte-carousel/src/main.js",
     "isDynamicEntry": true,
     "imports": [
       "_index-3e1adac4.js",
-      "_index-323609f2.js",
+      "_index-7906f2d5.js",
       "_transform-ffa743a8.js",
       "_preload-helper-bed30d68.js"
     ],
@@ -126,13 +126,13 @@
     "file": "_app/immutable/assets/fonts-694798f8.css",
     "src": "src/routes/demo/fonts.css"
   },
-  "index.css": {
-    "file": "_app/immutable/assets/index-9cf8be8d.css",
-    "src": "index.css"
-  },
   "src/routes/__layout.css": {
     "file": "_app/immutable/assets/__layout-474a5897.css",
     "src": "src/routes/__layout.css"
+  },
+  "index.css": {
+    "file": "_app/immutable/assets/index-f298fc84.css",
+    "src": "index.css"
   },
   "node_modules/svelte-carousel/src/main.css": {
     "file": "_app/immutable/assets/main-facf4390.css",
