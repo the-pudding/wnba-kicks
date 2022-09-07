@@ -69,6 +69,10 @@
 		fill: currentColor;
 	}
 
+	:global(.st0-wordmark) {
+		fill: currentColor;
+	}
+
 	.infoBtn {
 		position: absolute;
 		top: 0.4rem;

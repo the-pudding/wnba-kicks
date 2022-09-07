@@ -185,6 +185,7 @@
         width: 100%;
         margin: 0 auto;
         position: relative;
+        height: 660px;
     }
 
     :global(.shoeWrapper svg) {

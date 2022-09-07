@@ -27,7 +27,7 @@
 <Header />
 <Nav copyShift={copyShift} />
 
-<div class="mega-wrapper" style="height:{h+100}px;">
+<div class="mega-wrapper" style="height:{h+300}px;">
 	<div class="content-wrapper" bind:clientWidth={h}>
 		<ShoeShapes />
 		<Details />
@@ -47,7 +47,6 @@
 	.mega-wrapper {
 		position: relative;
 		min-height: 100vh;
-		margin-bottom: 3rem;
 	}
 	.content-wrapper {
 		position: absolute;
@@ -57,7 +56,7 @@
 	.content-bg {
 		position: relative;
 		width: 100%;
-		height: 200%;
+		height: 100%;
 		z-index: 1;
 		overflow: hidden;
 	}

@@ -23,14 +23,17 @@
     }
 
     function updateParticles(w) {
-        particleNum = Math.round(w/shoeW);
+        particleNum = Math.ceil(w/shoeW);
         return particleNum
     }
 
     function updateNavPos($currentShoe) {
-        console.log($currentShoe, particleNum, shoeLength)
-        let pages = Math.round(shoeLength/particleNum)
-        console.log(pages)
+        let pages = Math.ceil(shoeLength/particleNum)
+
+        if ($currentShoe > particleNum) {
+            carousel.goTo(2, { animated: true })
+        }
+
     }
 
     $: updateParticles(w);
@@ -43,7 +46,6 @@
     });
 
     function handleShoeClick() {
-        console.log("click")
         const item = d3.select(this);
         const navBlocks = d3.selectAll(".navBlock").classed("is-active", false);
         item.classed("is-active", true);
@@ -83,6 +85,7 @@
         flex-direction: row;
         overflow-x: hidden;
         background-color: #2906fc;
+        min-height: 8rem;
     }
 
     .navBlock {
