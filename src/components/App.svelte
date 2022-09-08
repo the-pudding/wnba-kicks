@@ -28,6 +28,7 @@
 <Nav copyShift={copyShift} />
 
 <div class="mega-wrapper" style="height:{h+300}px;">
+	<h1 aria-label="A visual history to WNBA kicks">A visual history to WNBA kicks</h1>
 	<div class="content-wrapper" bind:clientWidth={h}>
 		<ShoeShapes />
 		<Details />
@@ -48,6 +49,12 @@
 		position: relative;
 		min-height: 100vh;
 	}
+
+	h1 {
+		visibility: hidden;
+		position: absolute;
+	}
+
 	.content-wrapper {
 		position: absolute;
 		width: 100%;
