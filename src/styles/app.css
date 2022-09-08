@@ -91,6 +91,14 @@ h6 {
 	font-size: var(--20px, 20px);
 }
 
+header #pudding-wordmark {
+	fill: var(--color-gray-1000);
+}
+
+footer #pudding-wordmark {
+	fill: var(--color-gray-100);
+}
+
 #gradientWhite {
 	--color-stop-1: #FFFFFF;
 	--color-stop-2: #FCFCFC;
