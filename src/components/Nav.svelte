@@ -28,10 +28,10 @@
     }
 
     function updateNavPos($currentShoe) {
-        let pages = Math.ceil(shoeLength/particleNum)
-
-        if ($currentShoe > particleNum) {
-            carousel.goTo(2, { animated: true })
+        const pages = Math.ceil(shoeLength/particleNum)
+        if (pages) {
+            const page = Math.floor(($currentShoe-1)/particleNum)
+            carousel.goTo(page*2, { animated: true })
         }
 
     }
@@ -45,21 +45,25 @@
         Carousel = module.default;
     });
 
-    function handleShoeClick() {
-        const item = d3.select(this);
-        const navBlocks = d3.selectAll(".navBlock").classed("is-active", false);
-        item.classed("is-active", true);
-        const next = +this.id.split("_")[1];
-        playing.set(!$playing)
-        timer.stop();
-        if ($currentShoe !== next) {
-            animateAll(data, { prev: $currentShoe, next: next })
+    function handleShoeClick(e) {
+        const item = e.target.parentNode;
+        const itemClass = e.target.parentNode.className;
+        if (itemClass.includes("navBlock")) {
+            const itemID = e.target.parentNode.id;
+            const next = itemID.split("_")[1]
+            const navBlocks = d3.selectAll(".navBlock").classed("is-active", false);
+            item.classList.add("is-active");
+            playing.set(false);  
+            timer.stop();
+            if ($currentShoe !== next) {
+                animateAll(data, { prev: $currentShoe, next: +next })
+            }
         }
     }
 </script>
 
 <svelte:window bind:innerWidth={w}/>
-<nav>
+<nav on:click={handleShoeClick}>
     <svelte:component 
         this={Carousel}
         bind:this={carousel}
@@ -68,7 +72,7 @@
         arrows={false}
         dots={false}>
         {#each copyShift as shoe}
-        <div class="navBlock" id="nav_{shoe.shoeID}" on:click={handleShoeClick}>
+        <div class="navBlock" id="nav_{shoe.shoeID}">
             <img src="assets/images/thumbnails/shoe{shoe.shoeID}_thumbnail.png"
             alt="illustration of {shoe.shoePlayer} {shoe.shoeName} shoe"
             class="navShoe"
@@ -106,7 +110,6 @@
     .navShoe {
         width: 100%;
         user-select: none;
-        user-drag: none;
         -webkit-user-drag: none;
         user-select: none;
         -moz-user-select: none;
@@ -123,7 +126,6 @@
         margin: 0.5rem 0 1rem 0;
         line-height: 1.25;
         user-select: none;
-        user-drag: none;
         -webkit-user-drag: none;
         user-select: none;
         -moz-user-select: none;

@@ -54,7 +54,7 @@
     .detailsWrapper {
         width: 100%;
         max-width: 960px;
-        margin: 2rem auto;
+        margin: 0 auto;
         font-family: var(--sans);
         display: flex;
         flex-direction: column;
