@@ -100,7 +100,7 @@
     });
 </script>
 <div class="fullScreen">
-    <button class="autoplayBtn" on:click="{playPause}">
+    <button aria-label="play/pause" class="autoplayBtn" on:click="{playPause}">
         {#if $playing}
             <Icon name="pause" width="1.5rem" height="1.5rem" fill="#4729fc" stroke="none"/>
         {:else}

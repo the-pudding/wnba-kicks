@@ -26,7 +26,7 @@
 	<div class="wordmark">
 		<a href="https://pudding.cool" aria-label="The Pudding">{@html wordmark}</a>
 	</div>
-	<button class="infoBtn" on:click="{showInfo}">
+	<button aria-label="info" class="infoBtn" on:click="{showInfo}">
 		{#if infoVisible}
 			<Icon name="x-circle" width="1.5rem" height="1.5rem" stroke="#ffffff"/>
 		{:else}
