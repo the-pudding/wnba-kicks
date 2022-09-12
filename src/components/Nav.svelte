@@ -27,18 +27,22 @@
         return particleNum
     }
 
-    function updateNavPos($currentShoe) {
+    function updateNavPos($currentShoe, w) {
+        updateParticles(w)
+        console.log(particleNum);
         const pages = Math.ceil(shoeLength/particleNum)
+        console.log(pages)
         if (pages) {
             const page = Math.floor(($currentShoe-1)/particleNum)
-            carousel.goTo(page*2, { animated: true })
+            if (page >= 0) {
+              carousel.goTo(page*2, { animated: true })  
+            }
         }
-
     }
 
     $: updateParticles(w);
     $: updateText($currentShoe);
-    $: updateNavPos($currentShoe);
+    $: updateNavPos($currentShoe, w);
 
     onMount(async () => {
         const module = await import('svelte-carousel');
