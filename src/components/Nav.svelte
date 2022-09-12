@@ -103,10 +103,6 @@
         cursor: pointer;
     }
 
-    .navBlock:hover {
-        transform: scale(1);
-    }
-
     .navShoe {
         width: 100%;
         user-select: none;
@@ -138,5 +134,11 @@
         opacity: 1 !important;
         transform: scale(1) !important;
         transition: all 300ms;
+    }
+
+    @media (hover: hover) {
+        .navBlock:hover {
+            transform: scale(1);
+        }
     }
 </style>
