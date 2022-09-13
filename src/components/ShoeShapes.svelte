@@ -225,8 +225,8 @@
 
     @media only screen and (min-width: 400px) {
 		.intro-text {
-			font-size: var(--36px);
-            top: 5%;
+			font-size: var(--32px);
+            top: 2%;
 		}
         .loading-text {
             font-size: var(--18px);
@@ -236,8 +236,8 @@
 
 	@media only screen and (min-width: 600px) {
 		.intro-text{
-			font-size: var(--40px);
-            top: 10%;
+			font-size: var(--32px);
+            top: 9%;
 		}
         .loading-text {
             font-size: var(--18px);
