@@ -33,7 +33,7 @@
                 const page = Math.floor(($currentShoe-1)/particleNum)
                 if (page >= 0) {
                     console.log($currentShoe, particleNum, page)
-                    carousel.goTo(page*2, { animated: true })  
+                    carousel.goTo(page, { animated: true })  
                 }
         }
     }
@@ -72,7 +72,7 @@
         this={Carousel}
         bind:this={carousel}
         particlesToShow={updateParticles(w)}
-        particlesToScroll={particleNum/2}
+        particlesToScroll={updateParticles(w)}
         arrows={false}
         dots={false}>
         {#each copyShift as shoe}
