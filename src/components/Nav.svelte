@@ -27,22 +27,22 @@
         return particleNum
     }
 
-    function updateNavPos($currentShoe, w) {
-        updateParticles(w)
-        console.log(particleNum);
-        const pages = Math.ceil(shoeLength/particleNum)
-        console.log(pages)
-        if (pages) {
-            const page = Math.floor(($currentShoe-1)/particleNum)
-            if (page >= 0) {
-              carousel.goTo(page*2, { animated: true })  
+    function updateNavPos($currentShoe, particleNum) {
+        if (particleNum) {
+            const pages = Math.ceil(shoeLength/particleNum)
+            if (pages) {
+                const page = Math.floor(($currentShoe-1)/particleNum)
+                if (page >= 0) {
+                    console.log($currentShoe, particleNum, pages, page)
+                    carousel.goTo(page*2, { animated: true })  
+                }
             }
         }
     }
 
     $: updateParticles(w);
     $: updateText($currentShoe);
-    $: updateNavPos($currentShoe, w);
+    $: updateNavPos($currentShoe, particleNum);
 
     onMount(async () => {
         const module = await import('svelte-carousel');
@@ -56,10 +56,12 @@
             const itemID = e.target.parentNode.id;
             const next = itemID.split("_")[1]
             const navBlocks = d3.selectAll(".navBlock").classed("is-active", false);
+            const dupeBlocks = d3.selectAll(`#${itemID}`).classed("is-active", true);
             item.classList.add("is-active");
             playing.set(false);  
             timer.stop();
             if ($currentShoe !== next) {
+                updateNavPos(+next, particleNum)
                 animateAll(data, { prev: $currentShoe, next: +next })
             }
         }
