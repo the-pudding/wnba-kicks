@@ -19,6 +19,7 @@
     function updateText($currentShoe) {
         if ($currentShoe > 0) {
             d3.selectAll(".navBlock").style("pointer-events", "auto");
+            d3.selectAll("nav").style("pointer-events", "auto");
         }
     }
 
@@ -29,14 +30,11 @@
 
     function updateNavPos($currentShoe, particleNum) {
         if (particleNum) {
-            const pages = Math.ceil(shoeLength/particleNum)
-            if (pages) {
                 const page = Math.floor(($currentShoe-1)/particleNum)
                 if (page >= 0) {
-                    console.log($currentShoe, particleNum, pages, page)
+                    console.log($currentShoe, particleNum, page)
                     carousel.goTo(page*2, { animated: true })  
                 }
-            }
         }
     }
 
@@ -96,6 +94,9 @@
         overflow-x: hidden;
         background-color: #2906fc;
         min-height: 8rem;
+        pointer-events: none;
+        cursor: pointer;
+        padding: 0.5rem 0;
     }
 
     .navBlock {
@@ -103,14 +104,15 @@
         flex-direction: column;
         align-items: center;
         opacity: 0.5;
-        transform: scale(0.75);
+        transform: scale(1);
 		transition: all 300ms;
         pointer-events: none;
         cursor: pointer;
     }
 
     .navShoe {
-        width: 100%;
+        width: 80%;
+        margin: 0 auto;
         user-select: none;
         -webkit-user-drag: none;
         user-select: none;
@@ -122,10 +124,10 @@
     .navBlock p {
 		font-family: var(--sans);
 		text-align: center;
-		width: 100%;
-		font-size: var(--14px);
+		width: 80%;
+		font-size: var(--12px);
 		color: var(--color-white);
-        margin: 0.5rem 0 1rem 0;
+        margin: 0.5rem auto 1rem auto;
         line-height: 1.25;
         user-select: none;
         -webkit-user-drag: none;
@@ -138,7 +140,7 @@
 
     :global(.is-active) {
         opacity: 1 !important;
-        transform: scale(1) !important;
+        transform: scale(1.2) !important;
         transition: all 300ms;
     }
 
