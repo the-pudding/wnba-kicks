@@ -1,5 +1,5 @@
 <script>
-    import { onMount } from "svelte";
+    import { onMount, tick } from "svelte";
     import * as d3 from "d3";
     import animateAll from "$utils/animateAll.js";
     import { currentShoe, nextShoe, playing } from "$stores/misc.js";
@@ -18,21 +18,20 @@
 
     function updateText($currentShoe) {
         if ($currentShoe > 0) {
-            d3.selectAll(".navBlock").style("pointer-events", "auto");
-            d3.selectAll("nav").style("pointer-events", "auto");
+            //d3.selectAll(".navBlock").style("pointer-events", "auto");
+            //d3.selectAll("nav").style("pointer-events", "auto");
         }
     }
 
     function updateParticles(w) {
         particleNum = Math.ceil(w/shoeW);
-        return particleNum
     }
 
-    function updateNavPos($currentShoe, particleNum) {
+    async function updateNavPos($currentShoe, particleNum) {
+        await tick();
         if (particleNum) {
                 const page = Math.floor(($currentShoe-1)/particleNum)
                 if (page >= 0) {
-                    console.log($currentShoe, particleNum, page)
                     carousel.goTo(page, { animated: true })  
                 }
         }
@@ -67,25 +66,28 @@
 </script>
 
 <svelte:window bind:innerWidth={w}/>
-<nav on:click={handleShoeClick}>
-    <svelte:component 
-        this={Carousel}
-        bind:this={carousel}
-        particlesToShow={updateParticles(w)}
-        particlesToScroll={updateParticles(w)}
-        arrows={false}
-        dots={false}>
-        {#each copyShift as shoe}
-        <div class="navBlock" id="nav_{shoe.shoeID}">
-            <img src="assets/images/thumbnails/shoe{shoe.shoeID}_thumbnail.png"
-            alt="illustration of {shoe.shoePlayer} {shoe.shoeName} shoe"
-            class="navShoe"
-            id="shoe{shoe.shoeID}_img">
-            <p>{shoe.shoeName}</p>
-        </div>
-        {/each}
-    </svelte:component>
-</nav>
+{#key particleNum}
+    <nav on:click={handleShoeClick}>
+        <svelte:component 
+            this={Carousel}
+            bind:this={carousel}
+            particlesToShow={particleNum}
+            particlesToScroll={particleNum}
+            arrows={false}
+            dots={false}>
+            {#each copyShift as shoe}
+            <div class="navBlock" id="nav_{shoe.shoeID}">
+                <img src="assets/images/thumbnails/shoe{shoe.shoeID}_thumbnail.png"
+                alt="illustration of {shoe.shoePlayer} {shoe.shoeName} shoe"
+                class="navShoe"
+                id="shoe{shoe.shoeID}_img">
+                <p>{shoe.shoeName}</p>
+            </div>
+            {/each}
+        </svelte:component>
+    </nav>
+{/key}
+
 
 <style>
     nav {
@@ -94,7 +96,7 @@
         overflow-x: hidden;
         background-color: #2906fc;
         min-height: 8rem;
-        pointer-events: none;
+        pointer-events: auto;
         cursor: pointer;
         padding: 0.5rem 0;
     }
@@ -106,7 +108,7 @@
         opacity: 0.5;
         transform: scale(1);
 		transition: all 300ms;
-        pointer-events: none;
+        pointer-events: auto;
         cursor: pointer;
     }
 
