@@ -19,6 +19,8 @@
 
 	// $: updateHeight(h)
 
+	$: console.log(h)
+
 	onMount(() => {
         //console.log(h)
     });
@@ -27,7 +29,7 @@
 <Header />
 <Nav copyShift={copyShift} />
 
-<div class="mega-wrapper" style="height:{h+100}px;">
+<div class="mega-wrapper">
 	<h1 aria-label="A visual history to WNBA kicks">A visual history to WNBA kicks</h1>
 	<div class="content-wrapper" bind:clientWidth={h}>
 		<ShoeShapes />
@@ -48,6 +50,7 @@
 	.mega-wrapper {
 		position: relative;
 		min-height: 100vh;
+		height: calc(100vh * 1.75);
 	}
 
 	h1 {
