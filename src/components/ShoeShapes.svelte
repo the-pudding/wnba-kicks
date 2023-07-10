@@ -1,5 +1,5 @@
 <script>
-    import shoeSvg from "$svg/wnba_kicks_2022.svg";
+    import shoeSvg from "$svg/wnba_kicks_2023.svg";
     import { getContext, onMount } from "svelte";
     import * as d3 from "d3";
     import * as flubber from 'flubber';

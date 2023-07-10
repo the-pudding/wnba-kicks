@@ -19,8 +19,6 @@
 
 	// $: updateHeight(h)
 
-	$: console.log(h)
-
 	onMount(() => {
         //console.log(h)
     });

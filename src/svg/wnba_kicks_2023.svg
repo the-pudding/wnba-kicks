@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="shapes" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 960 660" style="enable-background:new 0 0 960 660;" xml:space="preserve">
+	 width="960px" height="660px" viewBox="0 0 960 660" style="enable-background:new 0 0 960 660;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#FF8A3A;}
 	.st1{fill:#262626;}
@@ -85,7 +85,14 @@
 	<stop  offset="0.9784" stop-color='var(--color-stop-13)'/>
 	<stop  offset="1" stop-color='var(--color-stop-14)'/>
 </linearGradient>
-<g id="shoe0">
+<linearGradient id="stewartRuby" gradientUnits="userSpaceOnUse" x1="67.6063" y1="516.9796" x2="920.7637" y2="516.9796">
+	<stop  offset="0" stop-color='var(--color-stop-1)'/>
+	<stop  offset="0.4631" stop-color='var(--color-stop-2)'/>
+	<stop  offset="0.7385" stop-color='var(--color-stop-3)'/>
+	<stop  offset="0.9645" stop-color='var(--color-stop-4)'/>
+	<stop  offset="1" stop-color='var(--color-stop-5)'/>
+</linearGradient>
+<g id="shoe0" class="st0">
 	<path id="shoe0_x5F_9" class="st0" d="M680.3,413.8h-35.1v-29.2c0-4.2-1-6.9-4-6.9c-3,0-3.7,2.8-3.7,6.9v19.7
 		c0,7.4,2.2,10,8.5,15.3l17.2,14.4c12.7,10.6,17.4,17.8,17.4,35.6v17.1c0,26.2-14.9,39.6-39.8,39.6c-25.1,0-39.5-13.4-39.5-39.6
 		v-23.6h35.3v29.9c0,4.2,1,6.9,3.7,6.9c3,0,4-2.8,4-6.9v-21.1c0-7.2-2.2-9-8-13.7l-18.4-15c-10.9-9.3-16.7-17.4-16.7-33.1v-19.2
