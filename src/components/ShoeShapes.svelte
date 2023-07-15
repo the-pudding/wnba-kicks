@@ -195,6 +195,11 @@
 
     .imgOverlays {
         position: relative;
+        /* width: 100%;
+        height:
+        display: flex;
+        justify-content: center;
+        align-items: center; */
     }
 
     .imgOverlays img {
