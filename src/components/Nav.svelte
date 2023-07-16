@@ -63,6 +63,8 @@
             }
         }
     }
+
+    $: disabled = $currentShoe == 0 ? "disabled" : "";
 </script>
 
 <svelte:window bind:innerWidth={w}/>
@@ -76,7 +78,7 @@
             arrows={false}
             dots={false}>
             {#each copyShift as shoe}
-            <div class="navBlock" id="nav_{shoe.shoeID}">
+            <div class="navBlock {disabled}" id="nav_{shoe.shoeID}">
                 <img src="assets/images/thumbnails/shoe{shoe.shoeID}_thumbnail.png"
                 alt="illustration of {shoe.shoePlayer} {shoe.shoeName} shoe"
                 class="navShoe"
