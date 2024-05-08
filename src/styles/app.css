@@ -158,3 +158,13 @@ footer #pudding-wordmark {
 	--color-stop-4: #A31529;
 	--color-stop-5: #A01529;
 }
+
+#stewart3blue {
+	--color-stop-1: #6dd3f6;
+	--color-stop-2: #224a71;
+}
+
+#stewart3peach {
+	--color-stop-1: #fdc180;
+	--color-stop-2: #fc8747;
+}

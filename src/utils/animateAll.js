@@ -59,7 +59,12 @@ const fillMatches = {
 	st165: "#6F5D77",
 	st166: "#7A6C84",
 	st167: "#5E4A68",
-	st168: "#BC91A0"
+	st168: "#BC91A0",
+    st169: "#F4887F",
+    st170: "#FFA197",
+    st171: "url(#stewart3blue)",
+    st172: "#E8BC05",
+    st173: "url(#stewart3peach)"
 }
 
 function hideImage(prev) {

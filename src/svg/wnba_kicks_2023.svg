@@ -92,6 +92,14 @@
 	<stop  offset="0.9645" stop-color='var(--color-stop-4)'/>
 	<stop  offset="1" stop-color='var(--color-stop-5)'/>
 </linearGradient>
+<linearGradient id="stewart3blue" x1="279.4" y1="451" x2="632.7" y2="451" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color='var(--color-stop-1)'/>
+      <stop offset="1" stop-color='var(--color-stop-2)'/>
+</linearGradient>
+<linearGradient id="stewart3peach" x1="130.8" y1="458.2" x2="719.7" y2="458.2" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color='var(--color-stop-1)'/>
+      <stop offset="1" stop-color='var(--color-stop-2)'/>
+</linearGradient>
 <g id="shoe0" class="st0">
 	<path id="shoe0_x5F_9" class="st0" d="M680.3,413.8h-35.1v-29.2c0-4.2-1-6.9-4-6.9c-3,0-3.7,2.8-3.7,6.9v19.7
 		c0,7.4,2.2,10,8.5,15.3l17.2,14.4c12.7,10.6,17.4,17.8,17.4,35.6v17.1c0,26.2-14.9,39.6-39.8,39.6c-25.1,0-39.5-13.4-39.5-39.6
