@@ -168,3 +168,16 @@ footer #pudding-wordmark {
 	--color-stop-1: #fdc180;
 	--color-stop-2: #fc8747;
 }
+
+#sabrina2radial {
+	--color-stop-1: #aaedee;
+	--color-stop-2: #c6f3f3;
+	--color-stop-3: #edfcfc;
+}
+
+#sabrina2purple {
+	--color-stop-1: #6c3bd6;
+	--color-stop-2: #8157df;
+	--color-stop-3: #b7a0f5;
+	--color-stop-4: #baa4f7;
+}
