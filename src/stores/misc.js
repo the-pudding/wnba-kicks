@@ -2,7 +2,7 @@ import { writable, derived } from "svelte/store";
 
 export const currentShoe = writable(0);
 export const nextShoe = derived(currentShoe, ($currentShoe, set) => {
-    if ($currentShoe == 27) set(1);
+    if ($currentShoe == 28) set(1);
     else set($currentShoe + 1);
 });
 export const playing = writable(true);
