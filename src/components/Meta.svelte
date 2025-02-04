@@ -1,8 +1,8 @@
 <script>
 	export let title = "A visual history of WNBA Kicks";
-	export let description = "A morphing look back through women's basketball signature sneakers from Swoopes to Stewie";
+	export let description = "A morphing look back through women's basketball signature sneakers from Swoopes to A'ja";
 	export let url = "https://pudding.cool/2022/09/wnba-kicks";
-	export let keywords = "wnba, women, basketball, hoops, sneakers, shoes, kicks, nike, adidas, puma, fila, reebok, sheryl swoopes, rebecca lobo, lisa leslie, dawn staley, cynthia cooper, nikki mccray, chamique holdsclaw, diana taurasi, candace parker, elena della donne, breanna stewart";
+	export let keywords = "wnba, women, basketball, hoops, sneakers, shoes, kicks, nike, adidas, puma, fila, reebok, sheryl swoopes, rebecca lobo, lisa leslie, dawn staley, cynthia cooper, nikki mccray, chamique holdsclaw, diana taurasi, candace parker, elena della donne, breanna stewart, a'ja wilson";
 	export let preloadFont = [];
 </script>
 
