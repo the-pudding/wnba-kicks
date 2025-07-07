@@ -181,3 +181,58 @@ footer #pudding-wordmark {
 	--color-stop-3: #b7a0f5;
 	--color-stop-4: #baa4f7;
 }
+
+#wilsonPink {
+	--color-stop-1: #fbb6b9;
+	--color-stop-2: #fbb2b7;
+	--color-stop-3: #fb92ac;
+	--color-stop-4: #fc78a2;
+	--color-stop-5: #fc649b;
+    --color-stop-6: #fc5595;
+    --color-stop-7: #fc4d92;
+    --color-stop-8: #fd4b92;
+}
+
+#wilsonPink2 {
+	--color-stop-1:#878787;
+	--color-stop-2:#aa8091;
+	--color-stop-3:#c77b9a;
+	--color-stop-4:#de77a1;
+	--color-stop-5:#ef74a6;
+	--color-stop-6:#f872a9;
+	--color-stop-7:#fc72aa;
+	--color-stop-8:#fc97b5;
+}
+
+#wilsonPink3 {
+	--color-stop-1: #fbb6b9;
+	--color-stop-2:#fc74a1;
+	--color-stop-3:#fd4b92;
+	--color-stop-4:#eb3981;
+	--color-stop-5:#cc1b63;
+	--color-stop-6:#c11058;
+}
+
+#wilsonPink4 {
+	--color-stop-1:#fed5d5;
+    --color-stop-2:#fdc4cc;
+    --color-stop-3:#fcb0c1;
+    --color-stop-4:#fca1ba;
+    --color-stop-5:#fc99b6;
+    --color-stop-6:#fc97b5;
+}
+
+#wilsonPink5 {
+	--color-stop-1:#fee6e8;
+    --color-stop-2:#fee4e5;
+    --color-stop-3:#feddde;
+    --color-stop-4:#fed5d5;
+}
+
+#sabrina3 {
+	--color-stop-1: #f49676;
+	--color-stop-2: #f39c7a;
+	--color-stop-3: #f0b88e;
+	--color-stop-4: #efc999;
+	--color-stop-5: #efd09e;
+}

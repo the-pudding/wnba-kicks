@@ -69,7 +69,7 @@
 
 <svelte:window bind:innerWidth={w}/>
 {#key particleNum}
-    <nav on:click={handleShoeClick}>
+    <nav on:click={handleShoeClick} class="{disabled}">
         <svelte:component 
             this={Carousel}
             bind:this={carousel}
@@ -112,6 +112,10 @@
 		transition: all 300ms;
         pointer-events: auto;
         cursor: pointer;
+    }
+
+    nav.disabled, .navBlock.disabled {
+        pointer-events: none;
     }
 
     .navShoe {
