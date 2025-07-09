@@ -236,3 +236,11 @@ footer #pudding-wordmark {
 	--color-stop-4: #efc999;
 	--color-stop-5: #efd09e;
 }
+#angel, #angel2 {
+	--color-stop-1: #fcfafb;
+	--color-stop-2: #f5faff;
+	--color-stop-3: #f6fff0;
+	--color-stop-4: #fffcf0;
+	--color-stop-5: #fcf8ff;
+}
+

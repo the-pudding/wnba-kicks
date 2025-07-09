@@ -160,6 +160,20 @@
       <stop offset=".8" stop-color="#efc999"/>
       <stop offset="1" stop-color="#efd09e"/>
 </linearGradient>
+<linearGradient id="angel" x1="118.9" y1="363.3" x2="669.8" y2="363.3" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fcfafb"/>
+      <stop offset=".2" stop-color="#f5faff"/>
+      <stop offset=".5" stop-color="#f6fff0"/>
+      <stop offset=".7" stop-color="#fffcf0"/>
+      <stop offset="1" stop-color="#fcf8ff"/>
+</linearGradient>
+<linearGradient id="angel2" x1="577.1" y1="385.8" x2="820" y2="385.8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fcfafb"/>
+      <stop offset=".2" stop-color="#f5faff"/>
+      <stop offset=".5" stop-color="#f6fff0"/>
+      <stop offset=".7" stop-color="#fffcf0"/>
+      <stop offset="1" stop-color="#fcf8ff"/>
+</linearGradient>
 <g id="shoe0" class="st0">
 	<path id="shoe0_x5F_9" class="st0" d="M680.3,413.8h-35.1v-29.2c0-4.2-1-6.9-4-6.9c-3,0-3.7,2.8-3.7,6.9v19.7
 		c0,7.4,2.2,10,8.5,15.3l17.2,14.4c12.7,10.6,17.4,17.8,17.4,35.6v17.1c0,26.2-14.9,39.6-39.8,39.6c-25.1,0-39.5-13.4-39.5-39.6

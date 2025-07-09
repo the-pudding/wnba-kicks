@@ -5,6 +5,7 @@ import * as d3 from "d3";
 const fallbackColor ="#000000";
 const fillMatches = {
     st0: "#FFFFFF",
+    st1: "#f9f9f9",
     st3: "#FF8A3A",
     st4: "#262626",
     st5: "#4BDEE2",
@@ -97,6 +98,8 @@ const fillMatches = {
     st188:"url(#wilsonPink4)",
     st189:"url(#wilsonPink5)",
     st191:"url(#aja4)",
+    st200:"url(#angel)",
+    st201:"url(#angel2)",
     st209: "#f9e5a7",
     st211: "#06bdfc"
 }
