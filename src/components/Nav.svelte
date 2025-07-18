@@ -79,7 +79,7 @@
             dots={false}>
             {#each copyShift as shoe}
             <div class="navBlock {disabled}" id="nav_{shoe.shoeID}">
-                <img src="assets/images/thumbnails/shoe{shoe.shoeID}_thumbnail.png"
+                <img src="assets/images/thumbnails/shoe{shoe.shoeID}_thumbnailX.png"
                 alt="illustration of {shoe.shoePlayer} {shoe.shoeName} shoe"
                 class="navShoe"
                 id="shoe{shoe.shoeID}_img">

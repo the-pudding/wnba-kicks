@@ -113,7 +113,7 @@
         {@html shoeSvg}
         <div class="imgOverlays">
             {#each copy.shoes as shoe}
-                <img src="assets/images/details/shoe{shoe.shoeID}_detail.png"
+                <img src="assets/images/details/shoe{shoe.shoeID}_details.png"
                     id="overlay_shoe{shoe.shoeID}"
                     alt="shoe details like stitches, logos, and writing for the {shoe.shoeName}">
             {/each}
