@@ -70,7 +70,7 @@
 	}
 
 	.skewed-bg {
-		background-color: #361cf2;
+		background-color: #3338df;
 		transform: skew(0deg, -30deg);
 		position: absolute;
 		height: calc(100vh + 10rem);
@@ -92,7 +92,7 @@
 		padding: 0;
 		text-align: left;
 		font-family: var(--sans-display);
-		color: #2508f2;
+		color: #2a2fea;
 	}
 
 	@media only screen and (min-width: 400px) {

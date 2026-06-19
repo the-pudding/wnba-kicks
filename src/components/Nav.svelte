@@ -96,7 +96,7 @@
         display: flex;
         flex-direction: row;
         overflow-x: hidden;
-        background-color: #2906fc;
+        background-color: #2a2fea;
         min-height: 8rem;
         pointer-events: auto;
         cursor: pointer;
