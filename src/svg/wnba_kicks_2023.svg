@@ -11,34 +11,34 @@
 	.st5{fill:#E3F71E;}
 	.st6{fill:#F15E17;}
 </style>
-<linearGradient id="gradientWhite" class="st18" gradientUnits="userSpaceOnUse" x1="-40243.3438" y1="234.6189" x2="311033.125" y2="234.6189">
+<linearGradient id="gradientWhite" class="st18" gradientUnits="objectBoundingBox" x1="0%" y1="50%" x2="100%" y2="50%">
 	<stop offset="0" stop-color='var(--color-stop-1)'/>
 	<stop offset="0.4771" stop-color='var(--color-stop-2)'/>
 	<stop offset="0.7609" stop-color='var(--color-stop-3)'/>
 	<stop offset="0.9938" stop-color='var(--color-stop-4)'/>
 	<stop offset="1" stop-color='var(--color-stop-5)'/>
 </linearGradient>
-<linearGradient id="#parkerBluePurple" class="st31" gradientUnits="userSpaceOnUse" x1="202.424" y1="404.0195" x2="310.9909" y2="404.0195">
+<linearGradient id="#parkerBluePurple" class="st31" gradientUnits="objectBoundingBox" x1="0%" y1="50%" x2="100%" y2="50%">
 	<stop offset="9.624222e-04" stop-color='var(--color-stop-1)'/>
 	<stop offset="1" stop-color='var(--color-stop-2)'/>
 </linearGradient>
-<linearGradient id="parkerYellowOrange" class="st32" gradientUnits="userSpaceOnUse" x1="442.4247" y1="386.8842" x2="492.5229" y2="386.8842">
+<linearGradient id="parkerYellowOrange" class="st32" gradientUnits="objectBoundingBox" x1="0%" y1="50%" x2="100%" y2="50%">
 	<stop offset="3.098992e-04" stop-color='var(--color-stop-1)'/>
 	<stop offset="1" stop-color='var(--color-stop-2)'/>
 </linearGradient>
-<linearGradient id="parkerYellowOrange" class="st33" gradientUnits="userSpaceOnUse" x1="529.8393" y1="398.1612" x2="591.9987" y2="398.1612">
+<linearGradient id="parkerYellowOrange" class="st33" gradientUnits="objectBoundingBox" x1="0%" y1="50%" x2="100%" y2="50%">
 	<stop offset="3.098992e-04" stop-color='var(--color-stop-1)'/>
 	<stop offset="1" stop-color='var(--color-stop-2)'/>
 </linearGradient>
-<linearGradient id="parkerBluePurple" class="st34" gradientUnits="userSpaceOnUse" x1="419.7807" y1="395.1456" x2="620.7772" y2="395.1456">
+<linearGradient id="parkerBluePurple" class="st34" gradientUnits="objectBoundingBox" x1="0%" y1="50%" x2="100%" y2="50%">
 	<stop offset="9.624222e-04" stop-color='var(--color-stop-1)'/>
 	<stop offset="1" stop-color='var(--color-stop-2)'/>
 </linearGradient>
-<linearGradient id="parkerYellowOrange" class="st36" gradientUnits="userSpaceOnUse" x1="149.4888" y1="375.2458" x2="760.2122" y2="375.2458">
+<linearGradient id="parkerYellowOrange" class="st36" gradientUnits="objectBoundingBox" x1="0%" y1="50%" x2="100%" y2="50%">
 	<stop offset="3.098992e-04" stop-color='var(--color-stop-1)'/>
 	<stop offset="1" stop-color='var(--color-stop-2)'/>
 </linearGradient>
-<linearGradient id="eddPurpleYellow" class="st37" gradientUnits="userSpaceOnUse" x1="163.2034" y1="415.3457" x2="444.0203" y2="415.3457">
+<linearGradient id="eddPurpleYellow" class="st37" gradientUnits="objectBoundingBox" x1="0%" y1="50%" x2="100%" y2="50%">
 	<stop  offset="0.2931" stop-color='var(--color-stop-1)'/>
 	<stop  offset="0.3833" stop-color='var(--color-stop-2)'/>
 	<stop  offset="0.6034" stop-color='var(--color-stop-3)'/>
@@ -46,14 +46,14 @@
 	<stop  offset="0.9242" stop-color='var(--color-stop-5)'/>
 	<stop  offset="1" stop-color='var(--color-stop-6)'/>
 </linearGradient>
-<linearGradient id="eddRedPurple" class="st39" gradientUnits="userSpaceOnUse" x1="372.1992" y1="367.8077" x2="810.1928" y2="367.8077">
+<linearGradient id="eddRedPurple" class="st39" gradientUnits="objectBoundingBox" x1="0%" y1="50%" x2="100%" y2="50%">
 	<stop  offset="0.2931" stop-color='var(--color-stop-1)'/>
 	<stop  offset="0.4828" stop-color='var(--color-stop-2)'/>
 	<stop  offset="0.721" stop-color='var(--color-stop-3)'/>
 	<stop  offset="0.9008" stop-color='var(--color-stop-4)'/>
 	<stop  offset="1" stop-color='var(--color-stop-5)'/>
 </linearGradient>
-<linearGradient id="stewartNeonBlack" class="st43" gradientUnits="userSpaceOnUse" x1="101.0611" y1="494.1898" x2="622.0483" y2="494.1898">
+<linearGradient id="stewartNeonBlack" class="st43" gradientUnits="objectBoundingBox" x1="0%" y1="50%" x2="100%" y2="50%">
 	<stop  offset="0" stop-color='var(--color-stop-1)'/>
 	<stop  offset="0.3504" stop-color='var(--color-stop-2)'/>
 	<stop  offset="0.4764" stop-color='var(--color-stop-3)'/>
@@ -69,7 +69,7 @@
 	<stop  offset="0.9784" stop-color='var(--color-stop-13)'/>
 	<stop  offset="1" stop-color='var(--color-stop-14)'/>
 </linearGradient>
-<linearGradient id="stewartNeonBlack" class="st45" gradientUnits="userSpaceOnUse" x1="101.0611" y1="494.1898" x2="622.0483" y2="494.1898">
+<linearGradient id="stewartNeonBlack" class="st45" gradientUnits="objectBoundingBox" x1="0%" y1="50%" x2="100%" y2="50%">
 	<stop  offset="0" stop-color='var(--color-stop-1)'/>
 	<stop  offset="0.3504" stop-color='var(--color-stop-2)'/>
 	<stop  offset="0.4764" stop-color='var(--color-stop-3)'/>
@@ -85,33 +85,33 @@
 	<stop  offset="0.9784" stop-color='var(--color-stop-13)'/>
 	<stop  offset="1" stop-color='var(--color-stop-14)'/>
 </linearGradient>
-<linearGradient id="stewartRuby" gradientUnits="userSpaceOnUse" x1="67.6063" y1="516.9796" x2="920.7637" y2="516.9796">
+<linearGradient id="stewartRuby" gradientUnits="objectBoundingBox" x1="0%" y1="50%" x2="100%" y2="50%">
 	<stop  offset="0" stop-color='var(--color-stop-1)'/>
 	<stop  offset="0.4631" stop-color='var(--color-stop-2)'/>
 	<stop  offset="0.7385" stop-color='var(--color-stop-3)'/>
 	<stop  offset="0.9645" stop-color='var(--color-stop-4)'/>
 	<stop  offset="1" stop-color='var(--color-stop-5)'/>
 </linearGradient>
-<linearGradient id="stewart3blue" x1="279.4" y1="451" x2="632.7" y2="451" gradientUnits="userSpaceOnUse">
+<linearGradient id="stewart3blue" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color='var(--color-stop-1)'/>
       <stop offset="1" stop-color='var(--color-stop-2)'/>
 </linearGradient>
-<linearGradient id="stewart3peach" x1="130.8" y1="458.2" x2="719.7" y2="458.2" gradientUnits="userSpaceOnUse">
+<linearGradient id="stewart3peach" x1="130.8" y1="458.2" x2="719.7" y2="458.2" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color='var(--color-stop-1)'/>
       <stop offset="1" stop-color='var(--color-stop-2)'/>
 </linearGradient>
-<radialGradient id="sabrina2radial" cx="529.5" cy="443.5" fx="529.5" fy="443.5" r="97.5" gradientUnits="userSpaceOnUse">
+<radialGradient id="sabrina2radial" cx="529.5" cy="443.5" fx="529.5" fy="443.5" r="97.5" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="var(--color-stop-1)"/>
       <stop offset=".5" stop-color="var(--color-stop-2)"/>
       <stop offset="1" stop-color="var(--color-stop-3)"/>
 </radialGradient>
-<linearGradient id="sabrina2purple" x1="115.3" y1="488.5" x2="698.5" y2="317.6" gradientUnits="userSpaceOnUse">
+<linearGradient id="sabrina2purple" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#6c3bd6"/>
       <stop offset=".3" stop-color="#8157df"/>
       <stop offset="1" stop-color="#b7a0f5"/>
       <stop offset="1" stop-color="#baa4f7"/>
 </linearGradient>
-<linearGradient id="wilsonPink3" x1="248.9" y1="397.4" x2="821.5" y2="397.4" gradientUnits="userSpaceOnUse">
+<linearGradient id="wilsonPink3" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#fbb6b9"/>
       <stop offset=".3" stop-color="#fc74a1"/>
       <stop offset=".5" stop-color="#fd4b92"/>
@@ -119,7 +119,7 @@
       <stop offset=".9" stop-color="#cc1b63"/>
       <stop offset="1" stop-color="#c11058"/>
 </linearGradient>
-<linearGradient id="wilsonPink4" x1="386" y1="389.7" x2="598.4" y2="389.7" gradientUnits="userSpaceOnUse">
+<linearGradient id="wilsonPink4" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#fed5d5"/>
       <stop offset="0" stop-color="#fdc4cc"/>
       <stop offset=".2" stop-color="#fcb0c1"/>
@@ -127,13 +127,13 @@
       <stop offset=".6" stop-color="#fc99b6"/>
       <stop offset="1" stop-color="#fc97b5"/>
 </linearGradient>
-<linearGradient id="wilsonPink5" x1="133.2" y1="434.1" x2="363.6" y2="434.1" gradientUnits="userSpaceOnUse">
+<linearGradient id="wilsonPink5" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#fee6e8"/>
       <stop offset=".6" stop-color="#fee4e5"/>
       <stop offset=".8" stop-color="#feddde"/>
       <stop offset="1" stop-color="#fed5d5"/>
 </linearGradient>
-<linearGradient id="wilsonPink" x1="386" y1="372.8" x2="629.3" y2="372.8" gradientUnits="userSpaceOnUse">
+<linearGradient id="wilsonPink" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#fbb6b9"/>
       <stop offset="0" stop-color="#fbb2b7"/>
       <stop offset=".1" stop-color="#fb92ac"/>
@@ -143,7 +143,7 @@
       <stop offset=".7" stop-color="#fc4d92"/>
       <stop offset="1" stop-color="#fd4b92"/>
 </linearGradient>
-<radialGradient id="wilsonPink2" cx="553.3" cy="523" fx="553.3" fy="523" r="207.5" gradientUnits="userSpaceOnUse">
+<radialGradient id="wilsonPink2" cx="553.3" cy="523" fx="553.3" fy="523" r="207.5" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#878787"/>
       <stop offset="0" stop-color="#aa8091"/>
       <stop offset="0" stop-color="#c77b9a"/>
@@ -153,27 +153,71 @@
       <stop offset="0" stop-color="#fc72aa"/>
       <stop offset="1" stop-color="#fc97b5"/>
 </radialGradient>
-<linearGradient id="sabrina3" x1="91.7" y1="521.9" x2="567.7" y2="521.9" gradientUnits="userSpaceOnUse">
+<linearGradient id="sabrina3" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#f49676"/>
       <stop offset="0" stop-color="#f39c7a"/>
       <stop offset=".4" stop-color="#f0b88e"/>
       <stop offset=".8" stop-color="#efc999"/>
       <stop offset="1" stop-color="#efd09e"/>
 </linearGradient>
-<linearGradient id="angel" x1="118.9" y1="363.3" x2="669.8" y2="363.3" gradientUnits="userSpaceOnUse">
+<linearGradient id="angel" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#fcfafb"/>
       <stop offset=".2" stop-color="#f5faff"/>
       <stop offset=".5" stop-color="#f6fff0"/>
       <stop offset=".7" stop-color="#fffcf0"/>
       <stop offset="1" stop-color="#fcf8ff"/>
 </linearGradient>
-<linearGradient id="angel2" x1="577.1" y1="385.8" x2="820" y2="385.8" gradientUnits="userSpaceOnUse">
+<linearGradient id="angel2" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#fcfafb"/>
       <stop offset=".2" stop-color="#f5faff"/>
       <stop offset=".5" stop-color="#f6fff0"/>
       <stop offset=".7" stop-color="#fffcf0"/>
       <stop offset="1" stop-color="#fcf8ff"/>
 </linearGradient>
+<linearGradient id="blue-gradient" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3b6fcc"/>
+      <stop offset="1" stop-color="#164199"/>
+</linearGradient>
+<linearGradient id="blue-pink-gradient" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3b6fcc"/>
+      <stop offset=".1" stop-color="#3f70cc"/>
+      <stop offset=".3" stop-color="#4c75ce"/>
+      <stop offset=".4" stop-color="#627dd1"/>
+      <stop offset=".6" stop-color="#8189d5"/>
+      <stop offset=".7" stop-color="#a997da"/>
+      <stop offset=".9" stop-color="#d8a9e1"/>
+      <stop offset="1" stop-color="#fbb6e6"/>
+    </linearGradient>
+	<linearGradient id="si-4-gradient" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6c938c"/>
+      <stop offset=".3" stop-color="#87a39e"/>
+      <stop offset=".8" stop-color="#b7bfbd"/>
+      <stop offset="1" stop-color="#cacaca"/>
+    </linearGradient>
+<linearGradient id="stewie-5-body-gradient" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
+      <stop offset=".2" stop-color="#fccb2b"/>
+      <stop offset=".2" stop-color="#ebcf3e"/>
+      <stop offset=".3" stop-color="#c9d766"/>
+      <stop offset=".4" stop-color="#acde89"/>
+      <stop offset=".5" stop-color="#95e4a5"/>
+      <stop offset=".6" stop-color="#82e9ba"/>
+      <stop offset=".7" stop-color="#75ecca"/>
+      <stop offset=".8" stop-color="#6eeed3"/>
+      <stop offset="1" stop-color="#6cefd6"/>
+    </linearGradient>
+	<linearGradient id="stewie-5-heel-gradient" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fccb2b"/>
+      <stop offset=".5" stop-color="#f1896b"/>
+      <stop offset="1" stop-color="#ff508a"/>
+    </linearGradient>
+	<linearGradient id="atwo-pink-gradient" x1="50%" y1="100%" x2="50%" y2="0%" gradientUnits="objectBoundingBox">
+  <stop offset="0" stop-color="#f9c"/>
+  <stop offset="1" stop-color="#fc64a5"/>
+</linearGradient>
+	<linearGradient id="atwo-red-green-gradient" x1="0%" y1="50%" x2="100%" y2="50%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#9f2800"/>
+      <stop offset="1" stop-color="#003f09"/>
+    </linearGradient>
 <g id="shoe0" class="st0">
 	<path id="shoe0_x5F_9" class="st0" d="M680.3,413.8h-35.1v-29.2c0-4.2-1-6.9-4-6.9c-3,0-3.7,2.8-3.7,6.9v19.7
 		c0,7.4,2.2,10,8.5,15.3l17.2,14.4c12.7,10.6,17.4,17.8,17.4,35.6v17.1c0,26.2-14.9,39.6-39.8,39.6c-25.1,0-39.5-13.4-39.5-39.6

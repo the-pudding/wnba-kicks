@@ -101,7 +101,26 @@ const fillMatches = {
     st200:"url(#angel)",
     st201:"url(#angel2)",
     st209: "#f9e5a7",
-    st211: "#06bdfc"
+    st211: "#06bdfc",
+    st39a: "url(#atwo-red-green-gradient)",
+    st42a: "url(#atwo-pink-gradient)",
+    st43a: "#fc64a5",
+    st44a: "#fc86bc",
+    st38s: "url(#stewie-5-heel-gradient)",
+    st35s: "url(#stewie-5-body-gradient)",
+    st99s: "#3b6fcc",
+    st135s: "#4ce0c7",
+    st105s: "#6cefd6",
+    st113s: "#2dc4a7",
+    st137i: "#22af94",
+    st67i: "#19917a",
+    st33i: "url(#si-4-gradient)",
+    st27cc: "url(#blue-pink-gradient)",
+    st25cc: "url(#blue-gradient)",
+    st63cc: "#164199",
+    st99cc: "#3b6fcc",
+    st246cc: "#3550b5",
+    st132cc: "#3d9be8"
 }
 
 function hideImage(prev) {

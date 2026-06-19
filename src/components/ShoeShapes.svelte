@@ -35,9 +35,10 @@
         group.selectAll("path")
             .each((d, i, n) => {
                 const path = d3.select(n[i]);
+                const shapeID = path.attr("id");
                 const coordinates = path.attr("d");
                 const color = path.attr("class");
-                output.push({shoeID, coordinates, color});
+                output.push({shoeID, shapeID, coordinates, color});
             })
         return output;
     }
