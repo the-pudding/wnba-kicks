@@ -1,6 +1,6 @@
 <script>
 	import { getContext } from "svelte";
-	import wordmark from "$svg/wordmark.svg";
+	import wordmark from "$svg/wordmark_script_stacked_plain.svg";
 	import { onMount } from 'svelte';
 	import { select } from "d3";
 	import Icon from "$components/helpers/Icon.svelte";
@@ -17,7 +17,7 @@
 
 	function showInfo() {
 		infoVisible = !infoVisible
-		infoVisible ? infoOverlay.style("left", 0) : infoOverlay.style("left", "-100%")
+		infoVisible ? infoOverlay.style("left", 0) : infoOverlay.style("left", "100%")
 		infoVisible ? body.style("overflow-y", "hidden") : body.style("overflow-y", "auto")
 	}
 </script>
@@ -26,13 +26,16 @@
 	<div class="wordmark">
 		<a href="https://pudding.cool" aria-label="The Pudding">{@html wordmark}</a>
 	</div>
-	<button aria-label="info" class="infoBtn" on:click="{showInfo}">
+	<div class="right-wrapper">
+		<p>A Visual History of WNBA Kicks</p>
+		<button aria-label="info" class="infoBtn" on:click="{showInfo}">
 		{#if infoVisible}
 			<Icon name="x-circle" width="1.5rem" height="1.5rem" stroke="#ffffff"/>
 		{:else}
 			<Icon name="info" width="1.5rem" height="1.5rem" stroke="#262626"/>
 		{/if}
 	</button>
+	</div>
 	<div class="infoOverlay">
 		<div>
 			<h5>About this project</h5>
@@ -47,12 +50,15 @@
 <style>
 	header {
 		background-color: var(--color-white);
-		height: 3.5rem;
+		height: 4rem;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 0.5rem;
 	}
 	.wordmark {
-		max-width: 10em;
-		margin: 0 auto;
-		padding: 0.25em 0;
+		max-width: 7.5em;
 	}
 
 	.wordmark a {
@@ -65,12 +71,26 @@
 		background-color: transparent;
 	}
 
+	.right-wrapper {
+		z-index: 1000;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.25rem;
+		font-family: var(--sans);
+	}
+
+	.right-wrapper p {
+		padding: 0;
+		margin: 0;
+	}
+
 	.infoBtn {
-		position: absolute;
-		top: 0.4rem;
-		left: 0;
 		background-color: transparent;
 		z-index: 1000;
+		padding: 0;
+		display: flex;
+		align-items: center;
 	}
 
 	.infoOverlay {
@@ -79,7 +99,7 @@
 		position: absolute;
 		top: 0;
 		background-color: rgba(25, 25, 25, 0.98);
-		left: -100%;
+		left: 100%;
 		transition: left 1s;
 		z-index: 999;
 		display: flex;
