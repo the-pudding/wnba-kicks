@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from "svelte";
-	import wordmark from "$svg/wordmark.svg";
+	import wordmark from "$svg/wordmark_script_stacked_plain.svg";
 
 	let localURL;
 	let stories = [];
@@ -76,6 +76,10 @@
 		font-family: var(--sans);
 		padding: 3em 1em;
 		z-index: 2;
+	}
+
+	:global(footer .wordmark svg path) {
+		fill: var(--color-bg);
 	}
 
 	a,

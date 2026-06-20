@@ -47,8 +47,7 @@
 <style>
 	.mega-wrapper {
 		position: relative;
-		min-height: 100vh;
-		height: calc(100vh * 1.75);
+		height: 1200px;
 	}
 
 	h1 {
@@ -105,11 +104,25 @@
 		.big-num {
 			font-size: 15rem;
 		}
+
+		.mega-wrapper {
+			height: 1200px;
+		}
+	}
+
+	@media only screen and (min-width: 700px) {
+		.mega-wrapper {
+			height: 1400px;
+		}
 	}
 
 	@media only screen and (min-width: 800px) {
 		.big-num {
 			font-size: 20rem;
+		}
+
+		.mega-wrapper {
+			height: 1400px;
 		}
 	}
 </style>
