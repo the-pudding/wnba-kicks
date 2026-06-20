@@ -48,6 +48,7 @@
 	.mega-wrapper {
 		position: relative;
 		height: 1200px;
+		overflow-x: clip;
 	}
 
 	h1 {

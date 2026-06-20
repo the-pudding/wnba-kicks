@@ -17,8 +17,8 @@
 
 	function showInfo() {
 		infoVisible = !infoVisible
-		infoVisible ? infoOverlay.style("left", 0) : infoOverlay.style("left", "100%")
-		infoVisible ? body.style("overflow-y", "hidden") : body.style("overflow-y", "auto")
+		infoVisible ? infoOverlay.style("transform", "translateX(0)") : infoOverlay.style("transform", "translateX(100%)")
+    	infoVisible ? body.style("overflow-y", "hidden") : body.style("overflow-y", "auto")
 	}
 </script>
 
@@ -56,6 +56,7 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 0 0.5rem;
+		overflow-x: hidden;
 	}
 	.wordmark {
 		max-width: 7.5em;
@@ -84,6 +85,8 @@
 	.right-wrapper p {
 		padding: 0;
 		margin: 0;
+		font-family: var(--sans);
+		color: var(--color-fg) !important;
 	}
 
 	.infoBtn {
@@ -97,11 +100,12 @@
 	.infoOverlay {
 		width: 100%;
 		height: 100vh;
-		position: absolute;
+		position: fixed;
 		top: 0;
+		left: 0;
+		transform: translateX(100%);
 		background-color: rgba(25, 25, 25, 0.98);
-		left: 100%;
-		transition: left 1s;
+		transition: transform 0.6s ease-in-out;
 		z-index: 999;
 		display: flex;
 		flex-direction: column;
