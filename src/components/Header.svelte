@@ -4,22 +4,27 @@
 	import { onMount } from 'svelte';
 	import { select } from "d3";
 	import Icon from "$components/helpers/Icon.svelte";
+	import { cubicInOut } from "svelte/easing";
 
 	let copy = getContext("copy");
 	let infoOverlay;
 	let body;
 	let infoVisible = false;
 
-	onMount(() => {
-		body = select("body")
-		infoOverlay = select(".infoOverlay")
-	});
+	function flyPercent(node, { duration = 600 }) {
+        return {
+            duration,
+            easing: cubicInOut,
+            css: (t) => `transform: translateX(${(1 - t) * 100}%);`
+        };
+    }
 
-	function showInfo() {
-		infoVisible = !infoVisible
-		infoVisible ? infoOverlay.style("transform", "translateX(0)") : infoOverlay.style("transform", "translateX(100%)")
-    	infoVisible ? body.style("overflow-y", "hidden") : body.style("overflow-y", "auto")
-	}
+    function showInfo() {
+        infoVisible = !infoVisible;
+        if (typeof document !== 'undefined') {
+            document.body.style.overflowY = infoVisible ? "hidden" : "auto";
+        }
+    }
 </script>
 
 <header>
@@ -36,15 +41,20 @@
 		{/if}
 	</button>
 	</div>
-	<div class="infoOverlay">
-		<div>
-			<h5>About this project</h5>
-			{#each copy.info as { value }}
-				<p>{@html value}</p>
-			{/each}
-			<p class="byline">By <a href="https://pudding.cool/author/jan-diehm/">Jan Diehm</a></p>
-		</div>
-	</div>
+	{#if infoVisible}
+        <div 
+            class="infoOverlay" 
+            transition:flyPercent
+        >
+            <div>
+                <h5>About this project</h5>
+                {#each copy.info as { value }}
+                    <p>{@html value}</p>
+                {/each}
+                <p class="byline">By <a href="https://pudding.cool/author/jan-diehm/">Jan Diehm</a></p>
+            </div>
+        </div>
+    {/if}
 </header>
 
 <style>
@@ -79,14 +89,14 @@
 		align-items: center;
 		gap: 0.25rem;
 		font-family: var(--sans);
-		color: var(--color-fg);
+		color: #191919;
 	}
 
 	.right-wrapper p {
 		padding: 0;
 		margin: 0;
 		font-family: var(--sans);
-		color: var(--color-fg) !important;
+		color: #191919;
 	}
 
 	.infoBtn {
@@ -103,9 +113,7 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		transform: translateX(100%);
 		background-color: rgba(25, 25, 25, 0.98);
-		transition: transform 0.6s ease-in-out;
 		z-index: 999;
 		display: flex;
 		flex-direction: column;
