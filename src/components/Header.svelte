@@ -78,6 +78,7 @@
 		align-items: center;
 		gap: 0.25rem;
 		font-family: var(--sans);
+		color: var(--color-fg);
 	}
 
 	.right-wrapper p {
